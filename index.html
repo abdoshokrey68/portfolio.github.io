@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Portfolio</title>
+	<!-- Fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Sans+Mono:wght@300&display=swap"
+		rel="stylesheet" />
+	<!-- Main Style -->
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<div class="row">
+		<navbar class="col-lg-3 col-md-4 col-sm-6 lef-navbar d-lg-block">
+			<div class="navbar_button_close mr-5 d-none d-lg-none d-md-block d-sm-block">
+				<button class="btn">
+					<i class="fas fa-xmark fa-2x text-light"></i>
+				</button>
+			</div>
+
+			<div class="navbar_image_header d-flex">
+				<!-- <div class="col-md-6"> -->
+				<img id="auther_navbar_image_header" src="./images/328846155_507202214881574_3942122195554899770_n.jpg"
+					alt="Auther" class="img-circle m-auto w-75 mt-5">
+				<!-- </div> -->
+			</div>
+			<div class="navbar_auther_info ">
+				<div class="auther_info_s">
+					<h4 class="text-center">
+						<strong>
+							Abdallah Shokrey
+						</strong>
+					</h4>
+					<h5 class="text-center text-secondary">
+						Full Stack Web Developer
+					</h5>
+				</div>
+				<div class="auther social_links">
+					<div class="p-3 social_links__container">
+						<div class="p-1 single_social_link">
+							<a href="https://wa.me/201129899520" target="_blank">
+								<img src="./images/socials/whatsapp.807cf0d84060a9ee2059.png" alt="whatsapp"
+									class="w-100">
+							</a>
+						</div>
+						<div class="p-1 single_social_link">
+							<a href="https://www.facebook.com/BooDY.01149743903" target="_blank">
+								<img src="./images/socials/124010.png" alt="Facebook" class="w-100">
+							</a>
+						</div>
+						<div class="p-1 single_social_link">
+							<a href="https://github.com/abdoshokrey68" target="_blank">
+								<img src="./images/socials/github.ae338bb9946ededd8a421.png" alt="Github" class="w-100">
+							</a>
+						</div>
+						<div class="p-1 single_social_link">
+							<a href="https://www.linkedin.com/in/abdo-shokrey-b7a99b204/" target="_blank">
+								<img src="./images/socials/linkedin.8b89ce01929a419c5625.png" alt="Linked In"
+									class="w-100">
+							</a>
+						</div>
+						<div class="p-1 single_social_link">
+							<a href="mailto:abdoshokrey68@gmail.com" target="_blank">
+								<img src="./images/socials/gmail.08faf50832c29185ae0e.png" alt="Gmail" class="w-100">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="navbar__page__links">
+				<ul>
+					<li>
+						<a class="navbar_link active" href="#home">
+							HOME
+						</a>
+					</li>
+					<li>
+						<a class="navbar_link" href="#about">
+							ABOUT
+						</a>
+					</li>
+					<li>
+						<a class="navbar_link" href="#services">
+							SERVICES
+						</a>
+					</li>
+					<li>
+						<a class="navbar_link" href="#skills">
+							SKILLS
+						</a>
+					</li>
+					<li>
+						<a class="navbar_link" href="#education">
+							EDUCATION
+						</a>
+					</li>
+					<li>
+						<a class="navbar_link" href="#experiences">
+							EXPERIENCES
+						</a>
+					</li>
+					<li>
+						<a class="navbar_link" href="#work">
+							WORK
+						</a>
+					</li>
+					<li>
+						<a class="navbar_link" href="#contact">
+							CONTACT
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="copyright d-flex mt-3">
+				<p class="main_paragraph col-md-10 m-auto text-center">
+					© Copyright ©<span class="this_year">
+					</span> All rights reserved for "Abdallah Shokrey"| Full Stack Web developer located in "Egypt".
+				</p>
+			</div>
+		</navbar>
+		<div class="navbar_button_open d-lg-none d-md-block d-sm-block d-xl-inline-block ">
+			<button class="btn">
+				<i class="fas fa-list"></i>
+			</button>
+		</div>
+		<!-- Start Content Section -->
+		<section class=" col-lg-9 col-sm-12 main__contact mb-4">
+			<!-- Header Section -->
+			<div id="home" class="header container">
+				<div class="row">
+					<div class="col-md-6 header_data_section">
+						<div>
+							<h1 class="mt-3">
+								<span id="header__text__animation" class="header__text__animation ">I'm
+									Full Stack
+									Developer ~!</span>
+								👋
+							</h1>
+							<p class="main_paragraph  mt-3">
+								100% SELF EDUACATED PROGRAMER HAVE TWO YEARS OF EXPERIENCE.
+							</p>
+							<a href="./files/Shokry.pdf" target="_blank" download class="btn btn-outline-light mt-3">
+								CV Download
+								<i class="fas fa-download"></i>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 header__image mt-5">
+						<iframe src="https://embed.lottiefiles.com/animation/91382"></iframe>
+					</div>
+				</div>
+			</div>
+			<!-- About Me Section -->
+			<div id="about" class="about_me mt-3 container">
+				<div class="uniqe_header_title">
+					<h2 class="small_section_title"> ABOUT ME </h2>
+					<h3 class="main_section_header"> WHO AM I? </h3>
+					<p class="main_paragraph container mt-5">
+						<strong class="text-light"> Hi I'm Abdallah Shokrey. </strong> I'm
+						an experienced Front End Developer who constantly seeks out
+						innovative solutions to everyday problems. In my three years in
+						this industry, I've honed my analytical thinking and collaboration
+						skills, and I love working with a team.
+					</p>
+					<p class="main_paragraph container">
+						“Before my current position, I was a junior Front End Developer
+						with web First. While working there, I committed to web
+						development, which has been my specialty for two years".
+					</p>
+				</div>
+				<div class="about_me_skills mt-3">
+					<div class="row">
+						<div class="col-md-4 mt-2">
+							<div class="skills_container">
+								<h4 class="skills_icon">
+									<i class="fa-solid fa-paint-roller"></i>
+								</h4>
+								<h6 class="skills_name"> Web Design </h6>
+							</div>
+						</div>
+						<div class="col-md-4 mt-2">
+							<div class="skills_container">
+								<h4 class="skills_icon">
+									<i class="fa-solid fa-code"></i>
+								</h4>
+								<h6 class="skills_name"> Web Developer </h6>
+							</div>
+						</div>
+						<div class="col-md-4 mt-2">
+							<div class="skills_container">
+								<h4 class="skills_icon">
+									<i class="fa-solid fa-lightbulb"></i>
+								</h4>
+								<h6 class="skills_name"> Graphic Design </h6>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hire_me_section bg-warning p-5 mt-5">
+					<button class="btn btn-outline-dark float-end btn-lg">
+						HIRE ME!
+					</button>
+					<h3 class="title"> I am happy to know you </h3>
+				</div>
+			</div>
+			<!-- WHAT I DO? Section -->
+			<div id="services" class="what_i_do mt-5 container">
+				<h2 class="small_section_title"> WHAT I DO? </h2>
+				<h3 class="main_section_header"> HERE ARE SOME OF MY EXPERIENCE </h3>
+				<div class="row experience_box mt-5">
+					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel">
+						<div class="ex_container">
+							<div class="experience_icon">
+								<div class="icon-container">
+									<i class="fa-solid fa-lightbulb"></i>
+								</div>
+							</div>
+							<div class="experience_info mt-5">
+								<h3 class="experience_title"> Innovative Ideas </h3>
+								<p class="experience_details main_paragraph">
+									That Will Make Your Website A Whole Lot Easier Than You
+									Think.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel">
+						<div class="ex_container">
+							<div class="experience_icon">
+								<div class="icon-container">
+									<i class="fa-solid fa-paint-roller"></i>
+								</div>
+							</div>
+							<div class="experience_info mt-5">
+								<h3 class="experience_title"> Responsive Website </h3>
+								<p class="experience_details main_paragraph">
+									Design is about creating web pages that look good on all
+									devices, no matter what.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel">
+						<div class="ex_container">
+							<div class="experience_icon">
+								<div class="icon-container">
+									<i class="fa-solid fa-gauge-high"></i>
+								</div>
+							</div>
+							<div class="experience_info mt-5">
+								<h3 class="experience_title"> High Performance </h3>
+								<p class="experience_details main_paragraph">
+									Websites built to be better, faster, and more efficient than
+									others websites.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel">
+						<div class="ex_container">
+							<div class="experience_icon">
+								<div class="icon-container">
+									<i class="fa-solid fa-headset"></i>
+								</div>
+							</div>
+							<div class="experience_info mt-5">
+								<h3 class="experience_title"> Support 24/7 </h3>
+								<p class="experience_details main_paragraph">
+									provide high-quality Technical Support with personal
+									assistance for our customers
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- MY SPECIALTY -->
+			<div id="skills" class="my_specialty mt-5 container">
+				<h2 class="small_section_title"> MY SPECIALTY </h2>
+				<h3 class="main_section_header"> MY SKILLS </h3>
+				<p class="main_paragraph mt-5 container">
+					Hello There, I’m a Full Stack Web Developer Specialized in Front End
+					Development building responsive websites and i'm very good at using
+					HTML5, CSS3, Javascript, TypeScript, ReactJS, Nextjs, Redux, Redux
+					Toolkit, Webpack, JavaScript, Bootstrap, Sass, TailWind-Css, also
+					have medium knowledge of React Native, Vuejs, Python, Cypress and
+					Jest.
+				</p>
+				<div class="my_special_experiances">
+					Swiper
+				</div>
+			</div>
+			<!-- EDUCATION -->
+			<div id="education" class="education mt-5 container">
+				<h2 class="small_section_title"> EDUCATION </h2>
+				<h3 class="main_section_header"> EDUCATION AND VOLUNTEERING EXPERIENCE</h3>
+				<div class="my_education_section_dropdown">
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+						<div id="card_title" class="card_title text-light">
+							<i class="fas fa-plus float-end"></i>
+							<h5>
+								Bachelor Degree of Mechanical Engineering
+							</h5>
+						</div>
+						<div class="card_drop_down_section">
+							<p>
+								2018 - 2023 / Studies Mechanical Engineering at Suez Canal University | Forth Level
+								of
+								Mechanical Departement - (Still in University)
+							</p>
+						</div>
+					</div>
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+						<div id="card_title" class="card_title text-light">
+							<i class="fas fa-plus float-end"></i>
+							<h5>
+								Ismaillia secondary School
+							</h5>
+						</div>
+						<div class="card_drop_down_section">
+							<p>2015 - 2018. / Studied Mathematical science Major
+							</p>
+						</div>
+					</div>
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+						<div id="card_title" class="card_title text-light">
+							<i class="fas fa-plus float-end"></i>
+							<h5>Technical Support at TedX
+							</h5>
+						</div>
+						<div class="card_drop_down_section">
+							<p>2019 - 2020. / Fixing any issues in the website of TedX and help all members with any
+								Tech problems.
+							</p>
+						</div>
+					</div>
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+						<div id="card_title" class="card_title text-light">
+							<i class="fas fa-plus float-end"></i>
+							<h5>
+								Graphic Designer at ASCC
+							</h5>
+						</div>
+						<div class="card_drop_down_section">
+							<p>
+								2020 - 2021. /
+								- Making social media designs using Photoshop and illustrator
+								- Make some videos using premiere pro and after effect
+								- Awarded Golden Media Member of Event "Atraf"
+								- Awarded Golden Media Member of Event "El Farah".
+							</p>
+						</div>
+					</div>
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+						<div id="card_title" class="card_title text-light">
+							<i class="fas fa-plus float-end"></i>
+							<h5>
+								Delegate OF USA AT Model United Nations SCU
+							</h5>
+						</div>
+						<div class="card_drop_down_section">
+							<p>2019 - 2020. / Typically I'm playing the role of a delegate in the United Nations and
+								simulate UN committees.As a delegate i have a high level of negotiations skills,
+								soft
+								skills like public speaking , organized , presentation skills , communication
+								skills. my
+								role was to defend my country as a USA Delegate against all charges and threats that
+								can
+								compromised the peace and the safety of my people and my land.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- EXPERIENCE -->
+			<div id="experiences" class="experience mt-5 container">
+				<h2 class="small_section_title"> EXPERIENCE </h2>
+				<h3 class="main_section_header"> WORK EXPERIENCE </h3>
+				<div class="my_experiance_section mt-5">
+					<div class="row mt-5">
+						<div class="col-md-1 mt-5 d-flex">
+							<i class="fas fa-pen"></i>
+						</div>
+						<div class="col-md-11 mt-5">
+							<div class="h4">
+								<strong>Full Stack Developer</strong> 2020-2021
+							</div>
+							<p class="main_paragraph">
+								Spend almost two years in the freelancing field as a full-stack web developer in the
+								period of the coronavirus,working from home, but this the time I developed my skills
+								by
+								learning a python programming language and Django back-end web framework, to be a
+								full
+								stack developer, creating websites from scratch.
+							</p>
+						</div>
+					</div>
+					<div class="row mt-5">
+						<div class="col-md-1 mt-5 d-flex">
+							<i class="fas fa-pen"></i>
+						</div>
+						<div class="col-md-11 mt-5">
+							<div class="h4">
+								<strong>Front End Developer at ElPatal Group
+								</strong> 2019-2020
+							</div>
+							<p class="main_paragraph">
+								I used my skills in programming such as Html5, CSS 3, JavaScript, React, bootstrap,
+								sass, To create fully dynamic Responsive websites, landing pages, dashboards, And to
+								edit some websites by adding new features to them.
+							</p>
+						</div>
+					</div>
+					<div class="row mt-5">
+						<div class="col-md-1 mt-5 d-flex">
+							<i class="fas fa-pen"></i>
+						</div>
+						<div class="col-md-11 mt-5">
+							<div class="h4">
+								<strong>Graphic Designer
+								</strong> 2018-2020
+							</div>
+							<p class="main_paragraph">
+								I used my skills in programming such as Html5, CSS 3, JavaScript, React, bootstrap,
+								sass, To create fully dynamic Responsive websites, landing pages, dashboards, And to
+								edit some websites by adding new features to them.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- MY WORK -->
+			<div id="work" class="my_work mt-5 container">
+				<h2 class="small_section_title"> MY WORK
+				</h2>
+				<h3 class="main_section_header"> RECENT WORK </h3>
+				<div class="my__work__ex_section mt-5">
+					<div class="row">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+							<div class="single__project__info">
+								<img src="./images/images.png" alt="">
+								<div class="project_info">
+									<h6 class="my_work__s__title text-center">
+										Space tourism multi page website
+									</h6>
+									<div class="my__work_info">
+										<div class="row">
+											<div class="col-md-10">
+												<p>Space tourism multi page website</p>
+											</div>
+											<div class="col-md-2">
+												<a href="#">
+													<i class="fa-brands fa-github"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+							<div class="single__project__info">
+								<img src="./images/1598526.jpg" alt="">
+								<div class="project_info">
+									<h6 class="my_work__s__title text-center">
+										Space tourism multi page website
+									</h6>
+									<div class="my__work_info">
+										<div class="row">
+											<div class="col-md-10">
+												<p>Space tourism multi page website</p>
+
+											</div>
+											<div class="col-md-2">
+												<a href="#">
+													<i class="fa-brands fa-github"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+							<div class="single__project__info">
+								<img src="./images/05496532.jpg" alt="">
+								<div class="project_info">
+									<h6 class="my_work__s__title text-center">
+										Space tourism multi page website
+									</h6>
+									<div class="my__work_info">
+										<div class="row">
+											<div class="col-md-10">
+												<p>Space tourism multi page website</p>
+
+											</div>
+											<div class="col-md-2">
+												<a href="#">
+													<i class="fa-brands fa-github"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+							<div class="single__project__info">
+								<img src="./images/1514894984.png" alt="">
+								<div class="project_info">
+									<h6 class="my_work__s__title text-center">
+										Space tourism multi page website
+									</h6>
+									<div class="my__work_info">
+										<div class="row">
+											<div class="col-md-10">
+												<p>Space tourism multi page website</p>
+
+											</div>
+											<div class="col-md-2">
+												<a href="#">
+													<i class="fa-brands fa-github"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+							<div class="single__project__info">
+								<img src="./images/1916598419.jpg" alt="">
+								<div class="project_info">
+									<h6 class="my_work__s__title text-center">
+										Space tourism multi page website
+									</h6>
+									<div class="my__work_info">
+										<div class="row">
+											<div class="col-md-10">
+												<p>Space tourism multi page website</p>
+
+											</div>
+											<div class="col-md-2">
+												<a href="#">
+													<i class="fa-brands fa-github"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+							<div class="single__project__info">
+								<img src="./images/98484951654.jpg" alt="">
+								<div class="project_info">
+									<h6 class="my_work__s__title text-center">
+										Space tourism multi page website
+									</h6>
+									<div class="my__work_info">
+										<div class="row">
+											<div class="col-md-10">
+												<p>Space tourism multi page website</p>
+
+											</div>
+											<div class="col-md-2">
+												<a href="#">
+													<i class="fa-brands fa-github"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+							<div class="single__project__info">
+								<img src="./images/198416544965.jpg" alt="">
+								<div class="project_info">
+									<h6 class="my_work__s__title text-center">
+										Space tourism multi page website
+									</h6>
+									<div class="my__work_info">
+										<div class="row">
+											<div class="col-md-10">
+												<p>Space tourism multi page website</p>
+
+											</div>
+											<div class="col-md-2">
+												<a href="#">
+													<i class="fa-brands fa-github"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+							<div class="single__project__info">
+								<img src="./images/951895685274.png" alt="">
+								<div class="project_info">
+									<h6 class="my_work__s__title text-center">
+										Space tourism multi page website
+									</h6>
+									<div class="my__work_info">
+										<div class="row">
+											<div class="col-md-10">
+												<p>Space tourism multi page website</p>
+
+											</div>
+											<div class="col-md-2">
+												<a href="#">
+													<i class="fa-brands fa-github"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button id="btn_show_more_projects" class="btn btn-info col-md-12 mt-5 btn-lg">
+						Load More <i class="fas fa-eye"></i>
+					</button>
+				</div>
+			</div>
+			<!-- GET IN TOUCH -->
+			<div id="contact" class="get_in_touch mt-5 container">
+				<h2 class="small_section_title"> GET IN TOUCH </h2>
+				<h3 class="main_section_header"> CONTACT </h3>
+				<div class="get_in_touch_section container mt-5 mb-5">
+					<div class="row">
+						<div class="col-lg-6 col-md-12 col-sm-12">
+							<div class="col-md-11 my_contact_info">
+								<div class="col-md-12 mt-5">
+									<div class="contact_section_info  p-3">
+										<h6>
+											<i class="fas text-info fa-envelope-open-text"></i>
+											<a href="mailto:abdoshokrey68@gmail.com" class="text-info ml-3 mr-3">
+												abdoshokrey68@gmail.com
+											</a>
+										</h6>
+									</div>
+								</div>
+								<div class="col-md-12 mt-5">
+									<div class="contact_section_info  p-3">
+										<h6>
+											<i class="fas text-info fa-mobile">
+											</i>
+											<a href="tel:+201129899520" class="text-info ml-3 mr-3">
+												+201129899520
+											</a>
+										</h6>
+									</div>
+								</div>
+								<div class="col-md-12 mt-5">
+									<div class="contact_section_info p-3">
+										<h6 class="text-secondary">
+											<i class="fas text-info fa-map-location-dot">
+											</i><strong>
+
+												Cairo City, Egypt.
+											</strong>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12 col-sm-12 send_emeil_form">
+							<form action="https://api.web3forms.com/submit" method="POST">
+								<input type="hidden" name="from_name" value="My Portfolio Contact Form">
+								<input type="hidden" name="access_key" value="d07e3c97-5c93-4c89-916e-3f44fbdde75b">
+								<input class="mt-3" type="text" name="name" placeholder="Your Full Name ... " required>
+								<input class="mt-3" type="text" name="Phone Number" placeholder="Your Phone Number ... "
+									required>
+								<input class="mt-3" type="email" name="email" placeholder="Your Email Address ... "
+									required>
+								<input class="mt-3" type="text" name="subject" placeholder="Email Subject (optional) ">
+								<textarea class="mt-3" name="message" rows="5" cols="1"
+									placeholder="Your Message Here ..." required></textarea>
+								<input type="hidden" name="redirect"
+									value="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">
+								<button type="submit" class="btn btn-outline-info mt-5 col-md-12 btn-lg">Submit
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- Recaptcha v3 -->
+
+	<!-- <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY_HERE"></script>
+	<script>
+		grecaptcha.ready(function () {
+			grecaptcha.execute('YOUR_SITE_KEY_HERE', {
+				action: 'contact'
+			})
+				.then(function (token) {
+					recaptchaResponse.value = token;
+				});
+		});
+	</script> -->
+
+	<!-- fontawesome -->
+	<script src="https://kit.fontawesome.com/a9545f17e8.js" crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!-- Swiper -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<!-- Main Script -->
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>
