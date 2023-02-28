@@ -12,20 +12,26 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- Bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-	<!-- Swiper -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Sans+Mono:wght@300&display=swap"
 		rel="stylesheet" />
+
+	<!-- AOS Animation -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<!-- Swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 	<!-- Main Style -->
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 	<div class="row">
-		<navbar class="col-lg-3 col-md-4 col-sm-6 lef-navbar d-lg-block">
+		<navbar data-aos="fade-right" data-aos-duration="1500" class="col-lg-3 col-md-4 col-sm-6 lef-navbar d-lg-block">
 			<div class="navbar_button_close mr-5 d-none d-lg-none d-md-block d-sm-block">
 				<button class="btn">
 					<i class="fas fa-xmark fa-2x text-light"></i>
@@ -40,7 +46,7 @@
 			</div>
 			<div class="navbar_auther_info ">
 				<div class="auther_info_s">
-					<h4 class="text-center">
+					<h4 class="text-center arvo_font_family">
 						<strong>
 							Abdallah Shokrey
 						</strong>
@@ -126,7 +132,7 @@
 				</ul>
 			</div>
 			<div class="copyright d-flex mt-3">
-				<p class="main_paragraph col-md-10 m-auto text-center">
+				<p class="main_paragraph col-md-10 m-auto text-center courgette_font_family">
 					© Copyright ©<span class="this_year">
 					</span> All rights reserved for "Abdallah Shokrey"| Full Stack Web developer located in "Egypt".
 				</p>
@@ -142,7 +148,7 @@
 			<!-- Header Section -->
 			<div id="home" class="header container">
 				<div class="row">
-					<div class="col-md-6 header_data_section">
+					<div data-aos="fade-right" data-aos-duration="1500" class="col-md-6 header_data_section">
 						<div>
 							<h1 class="mt-3">
 								<span id="header__text__animation" class="header__text__animation ">I'm
@@ -159,13 +165,14 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-md-6 header__image mt-5">
+					<div data-aos="fade-left" data-aos-duration="1500" class="col-md-6 header__image mt-5">
 						<iframe src="https://embed.lottiefiles.com/animation/91382"></iframe>
 					</div>
 				</div>
 			</div>
 			<!-- About Me Section -->
-			<div id="about" class="about_me mt-3 container">
+			<div id="about" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="about_me mt-3 container">
 				<div class="uniqe_header_title">
 					<h2 class="small_section_title"> ABOUT ME </h2>
 					<h3 class="main_section_header"> WHO AM I? </h3>
@@ -184,7 +191,7 @@
 				</div>
 				<div class="about_me_skills mt-3">
 					<div class="row">
-						<div class="col-md-4 mt-2">
+						<div data-aos="zoom-in-down" data-aos-duration="1000" class="col-md-4 mt-2">
 							<div class="skills_container">
 								<h4 class="skills_icon">
 									<i class="fa-solid fa-paint-roller"></i>
@@ -192,7 +199,7 @@
 								<h6 class="skills_name"> Web Design </h6>
 							</div>
 						</div>
-						<div class="col-md-4 mt-2">
+						<div data-aos="zoom-in-up" data-aos-duration="1000" class="col-md-4 mt-2">
 							<div class="skills_container">
 								<h4 class="skills_icon">
 									<i class="fa-solid fa-code"></i>
@@ -200,7 +207,7 @@
 								<h6 class="skills_name"> Web Developer </h6>
 							</div>
 						</div>
-						<div class="col-md-4 mt-2">
+						<div data-aos="flip-right" data-aos-duration="1000" class="col-md-4 mt-2">
 							<div class="skills_container">
 								<h4 class="skills_icon">
 									<i class="fa-solid fa-lightbulb"></i>
@@ -210,19 +217,21 @@
 						</div>
 					</div>
 				</div>
-				<div class="hire_me_section bg-warning p-5 mt-5">
-					<button class="btn btn-outline-dark float-end btn-lg">
+				<div data-aos="zoom-in-up" data-aos-duration="2000" class="hire_me_section bg-warning p-5 mt-5">
+					<button class="btn btn-outline-dark float-end btn-lg hire_me_btn">
 						HIRE ME!
 					</button>
 					<h3 class="title"> I am happy to know you </h3>
 				</div>
 			</div>
 			<!-- WHAT I DO? Section -->
-			<div id="services" class="what_i_do mt-5 container">
+			<div id="services" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="what_i_do mt-5 container">
 				<h2 class="small_section_title"> WHAT I DO? </h2>
 				<h3 class="main_section_header"> HERE ARE SOME OF MY EXPERIENCE </h3>
 				<div class="row experience_box mt-5">
-					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel">
+					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel" data-aos="flip-left"
+						data-aos-easing="ease-out-cubic" data-aos-duration="1000" data-aos-offset="300">
 						<div class="ex_container">
 							<div class="experience_icon">
 								<div class="icon-container">
@@ -238,7 +247,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel">
+					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel" data-aos="flip-left"
+						data-aos-easing="ease-out-cubic" data-aos-duration="1000" data-aos-offset="300">
 						<div class="ex_container">
 							<div class="experience_icon">
 								<div class="icon-container">
@@ -254,7 +264,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel">
+					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel" data-aos="flip-left"
+						data-aos-easing="ease-out-cubic" data-aos-duration="1000" data-aos-offset="300">
 						<div class="ex_container">
 							<div class="experience_icon">
 								<div class="icon-container">
@@ -270,7 +281,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel">
+					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel" data-aos="flip-left"
+						data-aos-easing="ease-out-cubic" data-aos-duration="1000" data-aos-offset="300">
 						<div class="ex_container">
 							<div class="experience_icon">
 								<div class="icon-container">
@@ -289,7 +301,8 @@
 				</div>
 			</div>
 			<!-- MY SPECIALTY -->
-			<div id="skills" class="my_specialty mt-5 container">
+			<div id="skills" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="my_specialty mt-5 container">
 				<h2 class="small_section_title"> MY SPECIALTY </h2>
 				<h3 class="main_section_header"> MY SKILLS </h3>
 				<p class="main_paragraph mt-5 container">
@@ -301,15 +314,113 @@
 					Jest.
 				</p>
 				<div class="my_special_experiances">
-					Swiper
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="./images/experiance/q4we894q156we94q.png" alt="Javascript">
+								<h5 class="mt-5 arvo_font_family">
+									Javascript
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/Typescript_logo_2020.svg.png" alt="Typescript">
+								<h5 class="mt-5 arvo_font_family">
+									Typescript
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/Vue.js_Logo_2.svg.png" alt="Vue Js">
+								<h5 class="mt-5 arvo_font_family">
+									Vue Js
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/163111q10818-logo-react-js.png" alt="React Js">
+								<h5 class="mt-5 arvo_font_family">
+									React Js
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/logo.png" alt="MUI">
+								<h5 class="mt-5 arvo_font_family">
+									MUI
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/gulp-2x.png" alt="Gulp Js">
+								<h5 class="mt-5 arvo_font_family">
+									Gulp Js
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/1024px-Git-logo.svg.png" alt="Git">
+								<h5 class="mt-5 arvo_font_family">
+									Git
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/Docker-Logo-456462013.png" alt="Docker">
+								<h5 class="mt-5 arvo_font_family">
+									Docker
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/main-qimg-729a22aba98d1235fdce4883accaf81e.webp"
+									alt="Github">
+								<h5 class="mt-5 arvo_font_family">
+									Github
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/MySQL-Logo.png" alt="MySql">
+								<h5 class="mt-5 arvo_font_family">
+									MySql
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/png-transparent-php-web-development-javascript-logo-c-others-blue-text-trademark.png"
+									alt="PHP">
+								<h5 class="mt-5 arvo_font_family">
+									PHP
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/985px-Laravel.svg.png" alt="Laravel">
+								<h5 class="mt-5 arvo_font_family">
+									Laravel
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/rabbitmq-logo-png-transparent.png" alt="Rabbit MQ">
+								<h5 class="mt-5 arvo_font_family">
+									Rabbit MQ
+								</h5>
+							</div>
+							<!-- <div class="swiper-slide">
+								<img src="./images/experiance/rabbitmq-logo-png-transparent.png" alt="Rabbit MQ">
+								<h5 class="mt-5 arvo_font_family">
+									Rabbit MQ
+								</h5>
+							</div>
+							<div class="swiper-slide">
+								<img src="./images/experiance/rabbitmq-logo-png-transparent.png" alt="Rabbit MQ">
+								<h5 class="mt-5 arvo_font_family">
+									Rabbit MQ
+								</h5>
+							</div> -->
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
 				</div>
 			</div>
 			<!-- EDUCATION -->
-			<div id="education" class="education mt-5 container">
+			<div id="education" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="education mt-5 container">
 				<h2 class="small_section_title"> EDUCATION </h2>
 				<h3 class="main_section_header"> EDUCATION AND VOLUNTEERING EXPERIENCE</h3>
 				<div class="my_education_section_dropdown">
-					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-right"
+						data-aos-duration="1000" data-aos-offset="300">
 						<div id="card_title" class="card_title text-light">
 							<i class="fas fa-plus float-end"></i>
 							<h5>
@@ -324,7 +435,8 @@
 							</p>
 						</div>
 					</div>
-					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-left"
+						data-aos-duration="1000" data-aos-offset="300">
 						<div id="card_title" class="card_title text-light">
 							<i class="fas fa-plus float-end"></i>
 							<h5>
@@ -336,7 +448,8 @@
 							</p>
 						</div>
 					</div>
-					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-right"
+						data-aos-duration="1000" data-aos-offset="300">
 						<div id="card_title" class="card_title text-light">
 							<i class="fas fa-plus float-end"></i>
 							<h5>Technical Support at TedX
@@ -348,7 +461,8 @@
 							</p>
 						</div>
 					</div>
-					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-left"
+						data-aos-duration="1000" data-aos-offset="300">
 						<div id="card_title" class="card_title text-light">
 							<i class="fas fa-plus float-end"></i>
 							<h5>
@@ -365,7 +479,8 @@
 							</p>
 						</div>
 					</div>
-					<div id="slide_drop_down_s" class="slide_drop_down_s mt-3">
+					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-right"
+						data-aos-duration="1000" data-aos-offset="300">
 						<div id="card_title" class="card_title text-light">
 							<i class="fas fa-plus float-end"></i>
 							<h5>
@@ -387,11 +502,12 @@
 				</div>
 			</div>
 			<!-- EXPERIENCE -->
-			<div id="experiences" class="experience mt-5 container">
+			<div id="experiences" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="experience mt-5 container">
 				<h2 class="small_section_title"> EXPERIENCE </h2>
 				<h3 class="main_section_header"> WORK EXPERIENCE </h3>
 				<div class="my_experiance_section mt-5">
-					<div class="row mt-5">
+					<div class="row mt-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300">
 						<div class="col-md-1 mt-5 d-flex">
 							<i class="fas fa-pen"></i>
 						</div>
@@ -409,7 +525,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="row mt-5">
+					<div class="row mt-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300">
 						<div class="col-md-1 mt-5 d-flex">
 							<i class="fas fa-pen"></i>
 						</div>
@@ -425,7 +541,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="row mt-5">
+					<div class="row mt-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300">
 						<div class="col-md-1 mt-5 d-flex">
 							<i class="fas fa-pen"></i>
 						</div>
@@ -444,13 +560,15 @@
 				</div>
 			</div>
 			<!-- MY WORK -->
-			<div id="work" class="my_work mt-5 container">
+			<div id="work" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="my_work mt-5 container">
 				<h2 class="small_section_title"> MY WORK
 				</h2>
 				<h3 class="main_section_header"> RECENT WORK </h3>
 				<div class="my__work__ex_section mt-5">
 					<div class="row">
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-right"
+							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
 								<img src="./images/images.png" alt="">
 								<div class="project_info">
@@ -472,7 +590,8 @@
 								</div>
 							</div>
 						</div>
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-left"
+							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
 								<img src="./images/1598526.jpg" alt="">
 								<div class="project_info">
@@ -495,7 +614,8 @@
 								</div>
 							</div>
 						</div>
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-right"
+							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
 								<img src="./images/05496532.jpg" alt="">
 								<div class="project_info">
@@ -518,7 +638,8 @@
 								</div>
 							</div>
 						</div>
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-left"
+							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
 								<img src="./images/1514894984.png" alt="">
 								<div class="project_info">
@@ -541,7 +662,8 @@
 								</div>
 							</div>
 						</div>
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-right"
+							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
 								<img src="./images/1916598419.jpg" alt="">
 								<div class="project_info">
@@ -564,7 +686,8 @@
 								</div>
 							</div>
 						</div>
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-left"
+							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
 								<img src="./images/98484951654.jpg" alt="">
 								<div class="project_info">
@@ -587,7 +710,8 @@
 								</div>
 							</div>
 						</div>
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-right"
+							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
 								<img src="./images/198416544965.jpg" alt="">
 								<div class="project_info">
@@ -610,7 +734,8 @@
 								</div>
 							</div>
 						</div>
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container">
+						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-left"
+							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
 								<img src="./images/951895685274.png" alt="">
 								<div class="project_info">
@@ -702,21 +827,61 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="hire_me_popup_container ">
+				<div class="hire_me_popup col-lg-3 col-md-4 col-sm-5 ">
+					<button class="btn close_hire_me_popup">
+						<i class="fas fa-xmark"></i>
+					</button>
+					<h4 class="h4 text-black-50 text-center p-3 arvo_font_family">
+						Hiring Platforms
+					</h4>
+					<div class="platforms_container">
+						<div class="col-md-6 col-sm-10 m-auto mt-5">
+							<a href="https://www.linkedin.com/in/abdo-shokrey-b7a99b204/" target="_blank">
+								<img src="./images/careers/LinkedIn_Logo_2019.png" alt="LinkedIn">
+							</a>
+						</div>
+						<div class="col-md-6 col-sm-10 m-auto mt-5">
+							<a href="https://www.upwork.com/freelancers/~0172b890428a379db1" target="_blank">
+								<img src="./images/careers/Upwork-Logo.6949ced2d5f3902ea0b8.png" alt="Up Work">
+							</a>
+						</div>
+						<div class="col-md-6 col-sm-10 m-auto mt-5">
+							<a href="https://www.freelancer.com/u/abdoshokrey1111" target="_blank">
+								<img src="./images/careers/Freelancer_logo.0a2891e0d0a26f667533.png" alt="Freelancer">
+							</a>
+						</div>
+						<!-- <div class="col-md-6 col-sm-10 m-auto mt-5">
+							<a href="#" target="_blank">
+								<img src="./images/careers/88481-1456078475-logo-cs.4a17527065093a2662af.png"
+									alt="Mostaql">
+							</a>
+						</div> -->
+						<!-- <div class="col-md-6 col-sm-10 m-auto mt-5">
+							<a href="#" target="_blank">
+								<img src="./images/careers/Fiverr_New.5ae43a92e941ac1bb8ac.png" alt="Fiverr">
+							</a>
+						</div> -->
+					</div>
+				</div>
+			</div>
 		</section>
 	</div>
-	<!-- Recaptcha v3 -->
 
-	<!-- <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY_HERE"></script>
+	<!-- AOS Script -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script>
-		grecaptcha.ready(function () {
-			grecaptcha.execute('YOUR_SITE_KEY_HERE', {
-				action: 'contact'
-			})
-				.then(function (token) {
-					recaptchaResponse.value = token;
-				});
-		});
-	</script> -->
+		AOS.init();
+	</script>
+
+	<!-- Swiper Script -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+	<!-- gsap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/a9545f17e8.js" crossorigin="anonymous"></script>
@@ -725,8 +890,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 	<!-- Jquery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<!-- Swiper -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
 	<!-- Main Script -->
 	<script src="js/script.js"></script>
 

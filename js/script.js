@@ -1,15 +1,26 @@
+// gsap.registerPlugin(ScrollTrigger)
+
+// gsap.to('.about_me', {
+// 	x: 100,
+// 	duration: 1,
+// 	scrollTrigger: ".about_me", // start the animation when ".box" enters the viewport (once)
+// })
+
+// AOS.init();
+
 $(document).ready(function () {
-	var swiper = new Swiper('.mySwiper', {
-		slidesPerView: 3,
+	
+    var swiper = new Swiper(".mySwiper", {
+		slidesPerView: 4,
 		spaceBetween: 30,
-		freeMode: true,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		loop:true,
 		autoplay: {
 			delay: 2500,
 			disableOnInteraction: false,
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
 		},
 	});
 	
@@ -74,4 +85,13 @@ $(document).ready(function () {
 	// 	$("#auther_navbar_image_header").attr("src", AutherImagesArray[count])
 	// 	count >= 1 ? count = 0 : count ++;
 	// }, 1000);
+
+	$(".hire_me_btn").on("click", function () {
+		$(".hire_me_popup_container").toggleClass("d-none")
+	})
+	$(".close_hire_me_popup").on("click", function () {
+		$(".hire_me_popup_container").toggleClass("d-none")
+	})
+
 });
+
