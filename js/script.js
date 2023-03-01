@@ -17,7 +17,7 @@ $(document).ready(function () {
 			el: ".swiper-pagination",
 			clickable: true,
 		},
-		loop:true,
+		// loop:true,
 		autoplay: {
 			delay: 2500,
 			disableOnInteraction: false,
@@ -70,13 +70,13 @@ $(document).ready(function () {
 	$('.this_year').html(date.getFullYear())
 
 	$(".navbar_button_open button").on("click", function () {
-		$(".lef-navbar").slideToggle(300)
-		$(this).slideUp(300)
+		$(".navbar_button_open").slideUp(200)
+		$(".lef-navbar").slideToggle(400)
 	})
 
 	$(".navbar_button_close button").on("click", function () {
 		$(".lef-navbar").slideToggle(300)
-		$(".navbar_button_open").slideDown(300)
+		$(".navbar_button_open").delay(400).slideDown(300)
 	})
 
 	// const AutherImagesArray = ["./images/328846155_507202214881574_3942122195554899770_n.jpg", "./images/rtrewq.jpg"];
@@ -91,6 +91,20 @@ $(document).ready(function () {
 	})
 	$(".close_hire_me_popup").on("click", function () {
 		$(".hire_me_popup_container").toggleClass("d-none")
+	})
+
+	$(window).on('scroll', function () {
+		$(".main_content_containers").each(function () {
+			let element = document.getElementById(this.id);
+			let scrollY = window.scrollY
+			let offset = element.offsetTop;
+			let element_height = element.offsetHeight
+			if (scrollY + 300 >= offset && scrollY + 300< offset + element_height)
+			{
+				$(".navbar_link").removeClass("active")
+				$("#" + this.id + "_link").addClass("active")
+			}
+		})
 	})
 
 });

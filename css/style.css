@@ -209,8 +209,7 @@ div {
     max-width: 90vh;
     min-width: 30vh;
     max-height: 90vh;
-    min-height: 50vh;
-    overflow-y: scroll;
+    min-height: 30vh;
     background-color: #fff;
     border-radius: 15px;
     border-top: 8px solid #0072ff;
@@ -606,8 +605,15 @@ align-items: center;
     border-bottom: 2px solid #0072ff;
 }
 
+@media (min-width: 900px) {
+    .navbar_button_open {
+        display: none;
+    }
+}
+
 .navbar_button_open {
-    display: none;
+    /* display: none; */
+    /* visibility: hidden; */
     overflow: hidden;
 }
 
@@ -651,66 +657,69 @@ align-items: center;
     cursor: pointer;
 }
 
-.swiper-slide:nth-of-type(1) {
+.swiper-slide.javascript {
     border-top: 4px solid #ffdf00;
 }
 
-.swiper-slide:nth-of-type(2) {
+.swiper-slide.Typescript {
     border-top: 4px solid #2d79c7;
 }
 
-.swiper-slide:nth-of-type(3) {
+.swiper-slide.VueJs {
     border-top: 4px solid #3fb984;
 }
 
-.swiper-slide:nth-of-type(4) {
+.swiper-slide.ReactJs {
     border-top: 4px solid #0fddff;
 }
 
-.swiper-slide:nth-of-type(5) {
+.swiper-slide.MUI {
     border-top: 4px solid #007fff;
 }
 
-.swiper-slide:nth-of-type(6) {
+.swiper-slide.GulpJs {
     border-top: 4px solid #eb4a4b;
 }
 
-.swiper-slide:nth-of-type(7) {
+.swiper-slide.Git {
     border-top: 4px solid #f05133;
 }
 
-.swiper-slide:nth-of-type(8) {
+.swiper-slide.Docker {
     border-top: 4px solid #0092b7;
 }
 
-.swiper-slide:nth-of-type(9) {
+.swiper-slide.Github {
     border-top: 4px solid #f4cab1;
 }
 
-.swiper-slide:nth-of-type(10) {
+.swiper-slide.MySql {
     border-top: 4px solid #ffa518;
 }
 
-.swiper-slide:nth-of-type(11) {
+.swiper-slide.PHP {
     border-top: 4px solid #6781bb;
 }
 
-.swiper-slide:nth-of-type(12) {
+.swiper-slide.Laravel {
     border-top: 4px solid #ff291a;
 }
 
-.swiper-slide:nth-of-type(13) {
+.swiper-slide.RabbitMQ {
     border-top: 4px solid #ff6600;
 }
 
-.swiper-slide:nth-of-type(14) {
+/* .swiper-slide:nth-of-type(14) {
     border-top: 4px solid #ffa518;
-}
+} */
 
 .swiper-slide h5 {
     position: absolute;
     left: 37%;
     bottom: 25px;
+    text-align: center;
+    width: 100%;
+    left: 0;
 }
 
 .swiper-slide img {
