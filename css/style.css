@@ -6,16 +6,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* transition: all 1s; */
 }
 
 body {
-    background-color: #0b0c13;
-    color: #fff;
     font-family: "Libre Baskerville", serif;
     font-family: "Noto Sans Mono", monospace;
     margin-bottom: 50px;
-    font-weight: bold;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+body.theme {
+    background-color: #0b0c13 !important;
+    color: #fff !important;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+body.default_dark {
+    background-color: #0b0c13 !important;
+    color: #fff !important;
+    transition: color 0, background-color 0.5s;
 }
 
 .arvo_font_family {
@@ -26,6 +35,9 @@ body {
     font-family: 'Courgette', cursive !important;
 }
 
+.text-bold {
+    font-weight: bold;
+}
 
 #home,
 #about,
@@ -121,19 +133,25 @@ div {
 }
 
 .main_paragraph {
-    color: #888;
+    color: #333;
     font-family: "Libre Baskerville", serif;
     font-family: "Noto Sans Mono", monospace;
     line-height: 35px;
 }
 
-.small_section_title {
-    font-size: 0.9em;
+.main_paragraph.theme {
     color: #888;
 }
 
+.main_paragraph.default_dark {
+    color: #888;
+}
+
+.small_section_title {
+    font-size: 0.9em;
+}
+
 .about_me_skills .skills_container {
-    /* border-bottom: 1px solid #fff; */
     padding: 10px;
     position: relative;
 }
@@ -202,7 +220,7 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 4;
 }
 
 .hire_me_popup_container .hire_me_popup {
@@ -215,6 +233,7 @@ div {
     border-top: 8px solid #0072ff;
     padding: 30px 10px;
     position: relative;
+    overflow-y: scroll;
 }
 
 .hire_me_popup_container .hire_me_popup .platforms_container img {
@@ -252,7 +271,7 @@ div {
 .what_i_do .experience_box .ex_container {
     min-height: 300px;
     margin-top: 10px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 3px solid #fff;
     position: relative;
 }
 
@@ -369,33 +388,6 @@ div {
     height: 100%;
 }
 
-/* .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-
-display: -webkit-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
--webkit-box-pack: center;
--ms-flex-pack: center;
--webkit-justify-content: center;
-justify-content: center;
--webkit-box-align: center;
--ms-flex-align: center;
--webkit-align-items: center;
-align-items: center;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-*/
 .my_education_section_dropdown {
     margin-top: 50px;
 }
@@ -407,15 +399,18 @@ align-items: center;
 .my_education_section_dropdown .slide_drop_down_s .card_title.active {
     background-color: #dcdcdc !important;
     color: #000 !important;
+    transition: all 0.5s;
 }
 
 .my_education_section_dropdown .slide_drop_down_s .card_title {
+    transition: all 0.5s;
     background-color: #4d5066;
     padding: 15px;
     border-radius: 5px;
 }
 
 .my_education_section_dropdown .slide_drop_down_s .card_title i {
+    transition: all 2s;
     margin-top: 5px;
 }
 
@@ -534,8 +529,23 @@ align-items: center;
     position: fixed;
     overflow-y: scroll;
     max-height: 100vh;
-    z-index: 11;
-    background: #0b0c13;
+    z-index: 2;
+    transition: all 0.5s;
+}
+
+@media (max-width: 900px) {
+    .lef-navbar {
+        background: #fff;
+    }
+
+    .lef-navbar.theme {
+        background: #0b0c13 !important;
+        transition: all 0.5s;
+    }
+
+    .lef-navbar.default_dark {
+        background: #0b0c13 !important;
+    }
 }
 
 .lef-navbar .navbar_auther_info {
@@ -545,7 +555,6 @@ align-items: center;
 .lef-navbar .navbar_image_header img {
     border-radius: 50%;
     border: 3px solid #fff;
-    /* height: 250px; */
 
 }
 
@@ -556,7 +565,6 @@ align-items: center;
 }
 
 .lef-navbar .navbar_auther_info .social_links__container .single_social_link {
-    /* width: 16%; */
     display: inline-block;
 }
 
@@ -606,14 +614,14 @@ align-items: center;
 }
 
 @media (min-width: 900px) {
-    .navbar_button_open {
+
+    .navbar_button_open,
+    .navbar_button_close {
         display: none;
     }
 }
 
 .navbar_button_open {
-    /* display: none; */
-    /* visibility: hidden; */
     overflow: hidden;
 }
 
@@ -623,14 +631,9 @@ align-items: center;
     top: 10px;
 }
 
-.navbar_button_open button:hover {
-    color: #fff;
-}
-
 .navbar_button_open button {
     font-size: 2em;
-    color: #fff;
-    z-index: 111;
+    z-index: 3;
 }
 
 .navbar_button_close {
@@ -709,9 +712,6 @@ align-items: center;
     border-top: 4px solid #ff6600;
 }
 
-/* .swiper-slide:nth-of-type(14) {
-    border-top: 4px solid #ffa518;
-} */
 
 .swiper-slide h5 {
     position: absolute;
@@ -724,11 +724,75 @@ align-items: center;
 
 .swiper-slide img {
     display: block;
-    /* width: 100%; */
     max-width: 100%;
     border-radius: 15px;
     max-height: 65%;
-    /* object-fit: cover; */
     margin: auto;
     margin-top: 26px;
+}
+
+.theme_scale_container {
+    position: fixed;
+    top: 17px;
+    right: 17px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transition: all 1s;
+}
+
+.theme_scale_container.theme {
+    background: #0b0c13;
+    transition: all 0.5s;
+    transform: scale(133);
+}
+
+.theme_scale_container.default_dark {
+    background: #0b0c13;
+    transition: all 0s;
+    transform: scale(133);
+}
+
+.change__mode_container {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 85px;
+    border-radius: 20px;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+    background-color: #25273c;
+    padding: 5px 10px;
+}
+
+.change__mode_container i {
+    position: relative;
+    font-size: 1.3em;
+    transition: all 0.5s ease-in-out;
+}
+
+.change__mode_container i.theme {
+    transition: all 0.5s ease-in-out;
+    transform: translateX(41px) rotateZ(360deg);
+}
+
+.change__mode_container i.default_dark {
+    transition: all 0s ease-in-out;
+    transform: translateX(41px) rotateZ(360deg);
+}
+
+.change__mode_container:hover {
+    cursor: pointer;
+}
+
+.change__mode_container.theme {
+    background-color: #282b42;
+    border: 2px solid #ffd149;
+    transition: all 0.5s ease-in-out;
+}
+
+.change__mode_container.default_dark {
+    background-color: #282b42;
+    border: 2px solid #ffd149;
+    transition: all 0s ease-in-out;
 }

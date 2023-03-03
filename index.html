@@ -6,7 +6,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Portfolio</title>
-	<!-- Fontawesome -->
+
+	<!-- SEO -->
+	<meta property="og:title" content="Abdallah Shokrey- Web Developer &amp; Full Stack Developer Blog" />
+	<meta property="og:type" content="profile" />
+	<meta property="og:image" content="./images/328846155_507202214881574_3942122195554899770_n.jpg" />
+	<meta property="og:url" content="https://portfolio-premium.000webhostapp.com/" />
+
+	<link rel="icon" href="./images/328846155_507202214881574_3942122195554899770_n.jpg" />
+	<link rel="apple-touch-icon" href="./images/328846155_507202214881574_3942122195554899770_n.jpg" />
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 		integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
@@ -21,32 +29,33 @@
 		rel="stylesheet" />
 
 	<!-- AOS Animation -->
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link href="./css/aos.css" rel="stylesheet">
 
 	<!-- Swiper -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./css/swiper-bundle.min.css" />
 
 	<!-- Main Style -->
 	<link rel="stylesheet" href="css/style.css" />
-
-	<!-- <script src="js/script.js"></script> -->
 
 </head>
 
 <body>
 	<div class="row">
+		<div class="theme_scale_container">
+		</div>
+		<div class="change__mode_container">
+			<i class="fa-solid fa-sun text-warning"></i>
+		</div>
 		<navbar data-aos="fade-right" data-aos-duration="1500" class="col-lg-3 col-md-4 col-sm-6 lef-navbar d-lg-block">
-			<div class="navbar_button_close mr-5 d-none d-lg-none d-md-block d-sm-block">
+			<div class="navbar_button_close mr-5">
 				<button class="btn">
-					<i class="fas fa-xmark fa-2x text-light"></i>
+					<i class="fas fa-xmark fa-2x toggle_light"></i>
 				</button>
 			</div>
 
 			<div class="navbar_image_header d-flex">
-				<!-- <div class="col-md-6"> -->
 				<img id="auther_navbar_image_header" src="./images/328846155_507202214881574_3942122195554899770_n.jpg"
 					alt="Auther" class="img-circle m-auto w-75 mt-5">
-				<!-- </div> -->
 			</div>
 			<div class="navbar_auther_info ">
 				<div class="auther_info_s">
@@ -95,41 +104,49 @@
 				<ul>
 					<li>
 						<a class="navbar_link active" id="home_link" href="#home">
+							<i class="fas fa-home mr-2 ml-2"></i>
 							HOME
 						</a>
 					</li>
 					<li>
 						<a class="navbar_link" id="about_link" href="#about">
+							<i class="fas fa-circle-info mr-2 ml-2"></i>
 							ABOUT
 						</a>
 					</li>
 					<li>
 						<a class="navbar_link" id="services_link" href="#services">
+							<i class="fa-solid fa-hands-holding mr-2 ml-2"></i>
 							SERVICES
 						</a>
 					</li>
 					<li>
 						<a class="navbar_link" id="skills_link" href="#skills">
+							<i class="fa-solid fa-cogs mr-2 ml-2"></i>
 							SKILLS
 						</a>
 					</li>
 					<li>
 						<a class="navbar_link" id="education_link" href="#education">
+							<i class="fa-solid fa-user-graduate mr-2 ml-2"></i>
 							EDUCATION
 						</a>
 					</li>
 					<li>
 						<a class="navbar_link" id="experiences_link" href="#experiences">
+							<i class="fa-solid fa-flask mr-2 ml-2"></i>
 							EXPERIENCES
 						</a>
 					</li>
 					<li>
 						<a class="navbar_link" id="work_link" href="#work">
+							<i class="fa-solid fa-briefcase mr-2 ml-2"></i>
 							WORK
 						</a>
 					</li>
 					<li>
 						<a class="navbar_link" id="contact_link" href="#contact">
+							<i class="fa-solid fa-address-book mr-2 ml-2"></i>
 							CONTACT
 						</a>
 					</li>
@@ -142,22 +159,20 @@
 				</p>
 			</div>
 		</navbar>
-		<!-- <div class="navbar_button_open d-lg-none d-md-block d-sm-block d-xl-inline-block "> -->
 		<div class="navbar_button_open">
-			<button class="btn">
+			<button class="btn toggle_light">
 				<i class="fas fa-list"></i>
 			</button>
 		</div>
 		<!-- Start Content Section -->
 		<section class=" col-lg-9 col-sm-12 main__contact mb-4">
 			<!-- Header Section -->
-			<div id="home" class="main_content_containers" class="header container">
+			<div id="home" class="header container main_content_containers">
 				<div class="row">
 					<div data-aos="fade-right" data-aos-duration="1500" class="col-md-6 header_data_section">
 						<div>
 							<h1 class="mt-3">
-								<span id="header__text__animation" class="header__text__animation ">I'm
-									Full Stack
+								<span id="header__text__animation" class="header__text__animation ">I' m Full Stack
 									Developer ~!</span>
 								👋
 							</h1>
@@ -176,27 +191,21 @@
 				</div>
 			</div>
 			<!-- About Me Section -->
-			<div id="about" class="main_content_containers" data-aos="fade-up" data-aos-duration="1000"
-				data-aos-offset="300" class="about_me mt-3 container">
+			<div id="about" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="about_me main_content_containers mt-3 container">
 				<div class="uniqe_header_title">
 					<h2 class="small_section_title"> ABOUT ME </h2>
 					<h3 class="main_section_header"> WHO AM I? </h3>
 					<p class="main_paragraph container mt-5">
-						<strong class="text-light"> Hi I'm Abdallah Shokrey. </strong> I'm
-						an experienced Front End Developer who constantly seeks out
-						innovative solutions to everyday problems. In my three years in
-						this industry, I've honed my analytical thinking and collaboration
-						skills, and I love working with a team.
-					</p>
-					<p class="main_paragraph container">
-						“Before my current position, I was a junior Front End Developer
-						with web First. While working there, I committed to web
-						development, which has been my specialty for two years".
+						<strong class="toggle_light"> Hi I'm Abdallah Shokrey. </strong>
+						I am an experienced Full Stack Developer who is constantly looking
+						for innovative solutions to everyday problems. During my three years in the industry, I have
+						honed my analytical thinking and collaboration skills, and I love working with a team.
 					</p>
 				</div>
 				<div class="about_me_skills mt-3">
 					<div class="row">
-						<div data-aos="zoom-in-down" data-aos-duration="1000" class="col-md-4 mt-2">
+						<div data-aos="zoom-in-down" data-aos-duration="1000" class="col-md-6 mt-2">
 							<div class="skills_container">
 								<h4 class="skills_icon">
 									<i class="fa-solid fa-paint-roller"></i>
@@ -204,20 +213,12 @@
 								<h6 class="skills_name"> Web Design </h6>
 							</div>
 						</div>
-						<div data-aos="zoom-in-up" data-aos-duration="1000" class="col-md-4 mt-2">
+						<div data-aos="zoom-in-up" data-aos-duration="1000" class="col-md-6 mt-2">
 							<div class="skills_container">
 								<h4 class="skills_icon">
 									<i class="fa-solid fa-code"></i>
 								</h4>
 								<h6 class="skills_name"> Web Developer </h6>
-							</div>
-						</div>
-						<div data-aos="flip-right" data-aos-duration="1000" class="col-md-4 mt-2">
-							<div class="skills_container">
-								<h4 class="skills_icon">
-									<i class="fa-solid fa-lightbulb"></i>
-								</h4>
-								<h6 class="skills_name"> Graphic Design </h6>
 							</div>
 						</div>
 					</div>
@@ -230,8 +231,8 @@
 				</div>
 			</div>
 			<!-- WHAT I DO? Section -->
-			<div id="services" class="main_content_containers" data-aos="fade-up" data-aos-duration="1000"
-				data-aos-offset="300" class="what_i_do mt-5 container">
+			<div id="services" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="what_i_do main_content_containers mt-5 container">
 				<h2 class="small_section_title"> WHAT I DO? </h2>
 				<h3 class="main_section_header"> HERE ARE SOME OF MY EXPERIENCE </h3>
 				<div class="row experience_box mt-5">
@@ -286,7 +287,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="mt-4 col-lg-4 col-md-6 col-sm-12 experiance__col__sel" data-aos="flip-left"
+					<div class="mt-4 col-lg-12 col-md-6 col-sm-12 experiance__col__sel" data-aos="flip-left"
 						data-aos-easing="ease-out-cubic" data-aos-duration="1000" data-aos-offset="300">
 						<div class="ex_container">
 							<div class="experience_icon">
@@ -306,19 +307,15 @@
 				</div>
 			</div>
 			<!-- MY SPECIALTY -->
-			<div id="skills" class="main_content_containers" data-aos="fade-up" data-aos-duration="1000"
-				data-aos-offset="300" class="my_specialty mt-5 container">
+			<div id="skills" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="my_specialty main_content_containers mt-5 container">
 				<h2 class="small_section_title"> MY SPECIALTY </h2>
 				<h3 class="main_section_header"> MY SKILLS </h3>
 				<p class="main_paragraph mt-5 container">
-					Hello There, I’m a Full Stack Web Developer Specialized in Front End
-					Development building responsive websites and i'm very good at using
-					HTML5, CSS3, Javascript, TypeScript, ReactJS, Nextjs, Redux, Redux
-					Toolkit, Webpack, JavaScript, Bootstrap, Sass, TailWind-Css, also
-					have medium knowledge of React Native, Vuejs, Python, Cypress and
-					Jest.
+					Hi, I'm a Full Stack web developer specializing in developing and building responsive websites and
+					I'm very good at using all the features mentioned below and some more not mentioned
 				</p>
-				<div class="my_special_experiances">
+				<div class="my_special_experiances mt-5">
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide javascript" data-aos="zoom-in-down" data-aos-duration="500"
@@ -414,46 +411,30 @@
 									Rabbit MQ
 								</h5>
 							</div>
-							<!-- <div class="swiper-slide" data-aos="zoom-in-down" data-aos-duration="500" data-aos-offset="200">
-								<img src="./images/experiance/rabbitmq-logo-png-transparent.png" alt="Rabbit MQ">
-								<h5 class="mt-5 arvo_font_family">
-									Rabbit MQ
-								</h5>
-							</div>
-							<div class="swiper-slide" data-aos="zoom-in-down" data-aos-duration="500" data-aos-offset="200">
-								<img src="./images/experiance/rabbitmq-logo-png-transparent.png" alt="Rabbit MQ">
-								<h5 class="mt-5 arvo_font_family">
-									Rabbit MQ
-								</h5>
-							</div> -->
 						</div>
 
-						<!-- <div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div> -->
 						<div class="swiper-pagination"></div>
 					</div>
 
 				</div>
 			</div>
 			<!-- EDUCATION -->
-			<div id="education" class="main_content_containers" data-aos="fade-up" data-aos-duration="1000"
-				data-aos-offset="300" class="education mt-5 container">
+			<div id="education" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="education main_content_containers mt-5 container">
 				<h2 class="small_section_title"> EDUCATION </h2>
-				<h3 class="main_section_header"> EDUCATION AND VOLUNTEERING EXPERIENCE</h3>
+				<h3 class="main_section_header"> EDUCATION AND CERTIFICATIONS</h3>
 				<div class="my_education_section_dropdown">
 					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-right"
 						data-aos-duration="1000" data-aos-offset="300">
 						<div id="card_title" class="card_title text-light">
 							<i class="fas fa-plus float-end"></i>
 							<h5>
-								Bachelor Degree of Mechanical Engineering
+								Bachelor's degree in Law
 							</h5>
 						</div>
 						<div class="card_drop_down_section">
-							<p>
-								2018 - 2023 / Studies Mechanical Engineering at Suez Canal University | Forth Level
-								of
-								Mechanical Departement - (Still in University)
+							<p>2018-2022 / Studying Law at the Faculty of Law, Aswan University | Good overall rating is
+								high
 							</p>
 						</div>
 					</div>
@@ -462,70 +443,23 @@
 						<div id="card_title" class="card_title text-light">
 							<i class="fas fa-plus float-end"></i>
 							<h5>
-								Ismaillia secondary School
-							</h5>
-						</div>
-						<div class="card_drop_down_section">
-							<p>2015 - 2018. / Studied Mathematical science Major
-							</p>
-						</div>
-					</div>
-					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-right"
-						data-aos-duration="1000" data-aos-offset="300">
-						<div id="card_title" class="card_title text-light">
-							<i class="fas fa-plus float-end"></i>
-							<h5>Technical Support at TedX
-							</h5>
-						</div>
-						<div class="card_drop_down_section">
-							<p>2019 - 2020. / Fixing any issues in the website of TedX and help all members with any
-								Tech problems.
-							</p>
-						</div>
-					</div>
-					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-left"
-						data-aos-duration="1000" data-aos-offset="300">
-						<div id="card_title" class="card_title text-light">
-							<i class="fas fa-plus float-end"></i>
-							<h5>
-								Graphic Designer at ASCC
+								One Million Arab Coders Initiative
 							</h5>
 						</div>
 						<div class="card_drop_down_section">
 							<p>
-								2020 - 2021. /
-								- Making social media designs using Photoshop and illustrator
-								- Make some videos using premiere pro and after effect
-								- Awarded Golden Media Member of Event "Atraf"
-								- Awarded Golden Media Member of Event "El Farah".
-							</p>
-						</div>
-					</div>
-					<div id="slide_drop_down_s" class="slide_drop_down_s mt-4" data-aos="fade-right"
-						data-aos-duration="1000" data-aos-offset="300">
-						<div id="card_title" class="card_title text-light">
-							<i class="fas fa-plus float-end"></i>
-							<h5>
-								Delegate OF USA AT Model United Nations SCU
-							</h5>
-						</div>
-						<div class="card_drop_down_section">
-							<p>2019 - 2020. / Typically I'm playing the role of a delegate in the United Nations and
-								simulate UN committees.As a delegate i have a high level of negotiations skills,
-								soft
-								skills like public speaking , organized , presentation skills , communication
-								skills. my
-								role was to defend my country as a USA Delegate against all charges and threats that
-								can
-								compromised the peace and the safety of my people and my land.
+								The One Million Arab Coders program is part of the Mohammed bin Rashid Global
+								Initiatives
+								(MBRGI), the charitable foundation dedicated to spreading education and knowledge across
+								the Arab world.
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- EXPERIENCE -->
-			<div id="experiences" class="main_content_containers" data-aos="fade-up" data-aos-duration="1000"
-				data-aos-offset="300" class="experience mt-5 container">
+			<div id="experiences" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="experience main_content_containers mt-5 container">
 				<h2 class="small_section_title"> EXPERIENCE </h2>
 				<h3 class="main_section_header"> WORK EXPERIENCE </h3>
 				<div class="my_experiance_section mt-5">
@@ -535,15 +469,12 @@
 						</div>
 						<div class="col-md-11 mt-5">
 							<div class="h4">
-								<strong>Full Stack Developer</strong> 2020-2021
+								<strong>Back End Developer</strong> : 2021-2022
 							</div>
 							<p class="main_paragraph">
-								Spend almost two years in the freelancing field as a full-stack web developer in the
-								period of the coronavirus,working from home, but this the time I developed my skills
-								by
-								learning a python programming language and Django back-end web framework, to be a
-								full
-								stack developer, creating websites from scratch.
+								I spend almost a year freelancing as a back-end developer, working from home, but this
+								time I've advanced my skills by learning the VUE JS front-end framework, to being a full
+								stack developer, and building websites from scratch.
 							</p>
 						</div>
 					</div>
@@ -553,13 +484,13 @@
 						</div>
 						<div class="col-md-11 mt-5">
 							<div class="h4">
-								<strong>Front End Developer at ElPatal Group
-								</strong> 2019-2020
+								<strong>Full Stack Developer at Dokans
+								</strong> : 2022
 							</div>
 							<p class="main_paragraph">
-								I used my skills in programming such as Html5, CSS 3, JavaScript, React, bootstrap,
-								sass, To create fully dynamic Responsive websites, landing pages, dashboards, And to
-								edit some websites by adding new features to them.
+								I've been employed by this company for about 6 months, and have been using my coding
+								skills To create websites, landing pages, dashboards, and
+								Edit some sites by adding new features to them and integrate several platforms .
 							</p>
 						</div>
 					</div>
@@ -569,66 +500,58 @@
 						</div>
 						<div class="col-md-11 mt-5">
 							<div class="h4">
-								<strong>Graphic Designer
-								</strong> 2018-2020
+								<strong> Full Stack Developer At Cairo POS
+								</strong> 2022 - 2023
 							</div>
 							<p class="main_paragraph">
-								I used my skills in programming such as Html5, CSS 3, JavaScript, React, bootstrap,
-								sass, To create fully dynamic Responsive websites, landing pages, dashboards, And to
-								edit some websites by adding new features to them.
+								I have worked in this company for about 5 months, and I have been working on many
+								professional websites, including a multi-merchant online store, an accounting system,
+								and creating invoices.
+							</p>
+						</div>
+					</div>
+					<div class="row mt-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300">
+						<div class="col-md-1 mt-5 d-flex">
+							<i class="fas fa-pen"></i>
+						</div>
+						<div class="col-md-11 mt-5">
+							<div class="h4">
+								<strong> Full Stack Developer At Elevate
+								</strong> Jul 2022 – Present
+							</div>
+							<p class="main_paragraph">
+								I work in this company on many wide professional sites that use many professional
+								features to manage multiple systems
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- MY WORK -->
-			<div id="work" class="main_content_containers" data-aos="fade-up" data-aos-duration="1000"
-				data-aos-offset="300" class="my_work mt-5 container">
+			<div id="work" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300"
+				class="my_work main_content_containers mt-5 container">
 				<h2 class="small_section_title"> MY WORK
 				</h2>
 				<h3 class="main_section_header"> RECENT WORK </h3>
 				<div class="my__work__ex_section mt-5">
 					<div class="row">
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-right"
-							data-aos-duration="1000" data-aos-offset="300">
-							<div class="single__project__info">
-								<img src="./images/images.png" alt="">
-								<div class="project_info">
-									<h6 class="my_work__s__title text-center">
-										Space tourism multi page website
-									</h6>
-									<div class="my__work_info">
-										<div class="row">
-											<div class="col-md-10">
-												<p>Space tourism multi page website</p>
-											</div>
-											<div class="col-md-2">
-												<a href="#">
-													<i class="fa-brands fa-github"></i>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-left"
 							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
-								<img src="./images/1598526.jpg" alt="">
+								<img src="./images/work_exp/elevate.png" alt="">
 								<div class="project_info">
-									<h6 class="my_work__s__title text-center">
-										Space tourism multi page website
-									</h6>
+									<p class="my_work__s__title text-light text-center">
+										This is a giant company in the field of call centers
+									</p>
 									<div class="my__work_info">
 										<div class="row">
 											<div class="col-md-10">
-												<p>Space tourism multi page website</p>
-
+												<h6 class="text-bold">Elevate Company</h6>
 											</div>
 											<div class="col-md-2">
-												<a href="#">
-													<i class="fa-brands fa-github"></i>
+												<a href="https://portal.elevateholding.net/main/send-ticket"
+													target="_blank">
+													<i class="fa-solid fa-arrow-up-right-from-square"></i>
 												</a>
 											</div>
 										</div>
@@ -639,20 +562,19 @@
 						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-right"
 							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
-								<img src="./images/05496532.jpg" alt="">
+								<img src="./images/work_exp/boxbyld.png" alt="">
 								<div class="project_info">
-									<h6 class="my_work__s__title text-center">
-										Space tourism multi page website
-									</h6>
+									<p class="my_work__s__title text-light text-center">
+										A giant American company in the field of installation of solar panels
+									</p>
 									<div class="my__work_info">
 										<div class="row">
 											<div class="col-md-10">
-												<p>Space tourism multi page website</p>
-
+												<h6 class="text-bold">Boxbyld</h6>
 											</div>
 											<div class="col-md-2">
-												<a href="#">
-													<i class="fa-brands fa-github"></i>
+												<a href="https://www.boxbyld.tech/" target="_blank">
+													<i class="fa-solid fa-arrow-up-right-from-square"></i>
 												</a>
 											</div>
 										</div>
@@ -663,20 +585,19 @@
 						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-left"
 							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
-								<img src="./images/1514894984.png" alt="">
+								<img src="./images/work_exp/dokans.png" alt="">
 								<div class="project_info">
-									<h6 class="my_work__s__title text-center">
-										Space tourism multi page website
-									</h6>
+									<p class="my_work__s__title text-light text-center">
+										E-commerce Multi Vendors
+									</p>
 									<div class="my__work_info">
 										<div class="row">
 											<div class="col-md-10">
-												<p>Space tourism multi page website</p>
-
+												<h6 class="text-bold">Dokans </h6>
 											</div>
 											<div class="col-md-2">
-												<a href="#">
-													<i class="fa-brands fa-github"></i>
+												<a href="https://drr.ae/" target="_blank">
+													<i class="fa-solid fa-arrow-up-right-from-square"></i>
 												</a>
 											</div>
 										</div>
@@ -687,20 +608,19 @@
 						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-right"
 							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
-								<img src="./images/1916598419.jpg" alt="">
+								<img src="./images/work_exp/pos.png" alt="">
 								<div class="project_info">
-									<h6 class="my_work__s__title text-center">
-										Space tourism multi page website
-									</h6>
+									<p class="my_work__s__title text-light text-center">
+										Point Of Sale To Store inventory and sales management system
+									</p>
 									<div class="my__work_info">
 										<div class="row">
 											<div class="col-md-10">
-												<p>Space tourism multi page website</p>
-
+												<h6 class="text-bold"> POS</h6>
 											</div>
 											<div class="col-md-2">
-												<a href="#">
-													<i class="fa-brands fa-github"></i>
+												<a href="https://ecommerce-eg.com/our/" target="_blank">
+													<i class="fa-solid fa-arrow-up-right-from-square"></i>
 												</a>
 											</div>
 										</div>
@@ -711,19 +631,18 @@
 						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-left"
 							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
-								<img src="./images/98484951654.jpg" alt="">
+								<img src="./images/work_exp/cashir_system.png" alt="">
 								<div class="project_info">
-									<h6 class="my_work__s__title text-center">
-										Space tourism multi page website
-									</h6>
+									<p class="my_work__s__title text-light text-center">
+										Restaurant And Cafe Management System
+									</p>
 									<div class="my__work_info">
 										<div class="row">
 											<div class="col-md-10">
-												<p>Space tourism multi page website</p>
-
+												<h6 class="text-bold">Cashier System </h6>
 											</div>
 											<div class="col-md-2">
-												<a href="#">
+												<a href="https://github.com/abdoshokrey68/Casher" target="_blank">
 													<i class="fa-brands fa-github"></i>
 												</a>
 											</div>
@@ -735,45 +654,15 @@
 						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-right"
 							data-aos-duration="1000" data-aos-offset="300">
 							<div class="single__project__info">
-								<img src="./images/198416544965.jpg" alt="">
+								<img src="./images/work_exp/Legal_Cast.png" alt="">
 								<div class="project_info">
-									<h6 class="my_work__s__title text-center">
-										Space tourism multi page website
-									</h6>
+									<p class="my_work__s__title text-light text-center">
+										Landing Page
+									</p>
 									<div class="my__work_info">
 										<div class="row">
 											<div class="col-md-10">
-												<p>Space tourism multi page website</p>
-
-											</div>
-											<div class="col-md-2">
-												<a href="#">
-													<i class="fa-brands fa-github"></i>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class=" col-md-6 col-sm-12 col-xs-12 mt-5 single_pro_container" data-aos="fade-left"
-							data-aos-duration="1000" data-aos-offset="300">
-							<div class="single__project__info">
-								<img src="./images/951895685274.png" alt="">
-								<div class="project_info">
-									<h6 class="my_work__s__title text-center">
-										Space tourism multi page website
-									</h6>
-									<div class="my__work_info">
-										<div class="row">
-											<div class="col-md-10">
-												<p>Space tourism multi page website</p>
-
-											</div>
-											<div class="col-md-2">
-												<a href="#">
-													<i class="fa-brands fa-github"></i>
-												</a>
+												<h6 class="text-bold">Legal Cast</h6>
 											</div>
 										</div>
 									</div>
@@ -787,7 +676,7 @@
 				</div>
 			</div>
 			<!-- GET IN TOUCH -->
-			<div id="contact" class="main_content_containers" class="get_in_touch mt-5 container">
+			<div id="contact" class="get_in_touch main_content_containers mt-5 container">
 				<h2 class="small_section_title"> GET IN TOUCH </h2>
 				<h3 class="main_section_header"> CONTACT </h3>
 				<div class="get_in_touch_section container mt-5 mb-5">
@@ -842,7 +731,9 @@
 									placeholder="Your Message Here ..." required></textarea>
 								<input type="hidden" name="redirect"
 									value="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">
-								<button type="submit" class="btn btn-outline-info mt-5 col-md-12 btn-lg">Submit
+								<button type="submit" class="btn btn-outline-info mt-5 col-md-12 btn-lg">
+									<i class="fas fa-paper-plane mr-2 ml-2"></i>
+									Submit
 								</button>
 							</form>
 						</div>
@@ -859,21 +750,11 @@
 						Hiring Platform
 					</h4>
 					<div class="platforms_container">
-						<!-- <div class="col-md-6 col-sm-10 m-auto mt-5">
-							<a href="https://www.linkedin.com/in/abdo-shokrey-b7a99b204/" target="_blank">
-								<img src="./images/careers/LinkedIn_Logo_2019.png" alt="LinkedIn">
-							</a>
-						</div> -->
 						<div class="col-md-6 col-sm-10 m-auto mt-5">
 							<a href="https://www.upwork.com/freelancers/~0172b890428a379db1" target="_blank">
 								<img src="./images/careers/Upwork-Logo.6949ced2d5f3902ea0b8.png" alt="Up Work">
 							</a>
 						</div>
-						<!-- <div class="col-md-6 col-sm-10 m-auto mt-5">
-							<a href="https://www.freelancer.com/u/abdoshokrey1111" target="_blank">
-								<img src="./images/careers/Freelancer_logo.0a2891e0d0a26f667533.png" alt="Freelancer">
-							</a>
-						</div> -->
 					</div>
 				</div>
 			</div>
@@ -881,28 +762,28 @@
 	</div>
 
 	<!-- AOS Script -->
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="./js/aos.js"></script>
 	<script>
 		AOS.init();
 	</script>
 
 	<!-- Swiper Script -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-
-	<!-- gsap -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+	<script src="./js/swiper-bundle.min.js"></script>
 
 	<!-- fontawesome -->
-	<script src="https://kit.fontawesome.com/a9545f17e8.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/material-ui/5.0.0-beta.5/index.js"
+		integrity="sha512-uKxirna7d5STmVXEMQYBVRW1nERrqHjwOubv4QcK4oYaaifLiEnN/aLIJxVsyK4R1K+awpNIG73RaQfT1DZ8ew=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- <script src="./js/fontawesome.js" crossorigin="anonymous"></script> -->
 	<!-- Bootstrap -->
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
 	<!-- Jquery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 	<!-- Main Script -->
+	<script src="js/script.js"></script>
 
 </body>
 
