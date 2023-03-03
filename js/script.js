@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+	// Swiper 
     var swiper = new Swiper(".mySwiper", {
 		slidesPerView: 4,
 		breakpoints: {  
@@ -25,7 +26,6 @@ $(document).ready(function () {
 			el: ".swiper-pagination",
 			clickable: true,
 		},
-		// loop:true,
 		autoplay: {
 			delay: 2500,
 			disableOnInteraction: false,
@@ -56,7 +56,7 @@ $(document).ready(function () {
 	})
 	
 
-	// My Work Experiance Section
+	// Handle Show More Projects Method
 	var my__works_count_show = 2;
 	const HandleshowMySingleProject  = function (count) {
 		const single_pro_container = $('.single_pro_container');
@@ -72,37 +72,43 @@ $(document).ready(function () {
 	HandleshowMySingleProject(my__works_count_show)
 
 
+	// Handle Show More Projects Button
 	$("#btn_show_more_projects").on("click", function () {
 		my__works_count_show  = my__works_count_show + 2
 		HandleshowMySingleProject(my__works_count_show)
 	}) 
-
-	$(".navbar_link").on("click", function () {
-		$(".navbar_link").removeClass("active");
-		$(this).toggleClass("active")
-	})
 	
 	// Set Copyright Year
 	let date = new Date(); 
 	$('.this_year').html(date.getFullYear())
 
+	// Open Navbar Section
 	$(".navbar_button_open button").on("click", function () {
 		$(".navbar_button_open").slideUp(200)
 		$(".lef-navbar").slideToggle(400)
 	})
-
+	// Close Navbar Section
 	$(".navbar_button_close button").on("click", function () {
 		$(".lef-navbar").slideToggle(300)
 		$(".navbar_button_open").delay(400).slideDown(300)
 	})
 
+	// Open Hire Me Section Popup
 	$(".hire_me_btn").on("click", function () {
 		$(".hire_me_popup_container").toggleClass("d-none")
 	})
+	
+	// Close Hire Me Section Popup
 	$(".close_hire_me_popup").on("click", function () {
 		$(".hire_me_popup_container").toggleClass("d-none")
 	})
 
+	// Change Navbar Links Active
+	$(".navbar_link").on("click", function () {
+		$(".navbar_link").removeClass("active");
+		$(this).toggleClass("active")
+	})
+	// Change Navbar Links Active
 	$(window).on('scroll', function () {
 		$(".main_content_containers").each(function () {
 			let element = document.getElementById(this.id);
@@ -117,6 +123,7 @@ $(document).ready(function () {
 		})
 	})
 
+	//  Change Theme Method
 	const ChangePortfolioTheme = function (class_value) {
 		$("body").toggleClass(class_value)
 		$(".main_paragraph").toggleClass(class_value)
@@ -142,6 +149,7 @@ $(document).ready(function () {
 
 	})
 
+	// Set The Theme To Local Storage
 	const CheckIfThemeIsSavedInLocalStorage = function () {
 		if(localStorage.getItem("theme"))
 		{
@@ -153,7 +161,27 @@ $(document).ready(function () {
 			localStorage.setItem('theme', 'light');
 		}
 	}
-
 	CheckIfThemeIsSavedInLocalStorage()
+
+
+	// Remove Server 000webhost Ads From Free Website
+	$(window).on("scroll", function () {
+	    $('a').each(function () {
+	        $(this).attr("title") === "Hosted on free web hosting 000webhost.com. Host your own website for FREE." ? $(this).closest("div").remove() : false;
+	    })
+	})
+
+	// Handle Hidde Button Go Up In The Top Page	
+	$(window).on("scroll", function () {
+		if (window.scrollY > 200) {
+			$(".go_up_btn button").slideDown(500)
+		} else {
+			$(".go_up_btn button").slideUp(500)
+		}
+	})
+	// Handle Go Up Page 
+	$(".go_up_btn button").on("click", function () {
+		window.scrollTo(0, 0)
+	})
 });
 

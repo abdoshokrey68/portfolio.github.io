@@ -529,7 +529,7 @@ div {
     position: fixed;
     overflow-y: scroll;
     max-height: 100vh;
-    z-index: 2;
+    z-index: 3;
     transition: all 0.5s;
 }
 
@@ -795,4 +795,18 @@ div {
     background-color: #282b42;
     border: 2px solid #ffd149;
     transition: all 0s ease-in-out;
+}
+
+.go_up_btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 2;
+}
+
+.go_up_btn button {
+    display: none;
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
 }

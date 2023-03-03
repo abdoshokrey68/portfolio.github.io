@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 		integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 	<!-- Bootstrap -->
 	<link href="./css/bootstrap@5.0.2.min.css" rel="stylesheet" />
 
@@ -27,9 +28,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Sans+Mono:wght@300&display=swap"
 		rel="stylesheet" />
-
-	<!-- AOS Animation -->
-	<link href="./css/aos.css" rel="stylesheet">
 
 	<!-- Swiper -->
 	<link rel="stylesheet" href="./css/swiper-bundle.min.css" />
@@ -186,7 +184,8 @@
 						</div>
 					</div>
 					<div data-aos="fade-left" data-aos-duration="1500" class="col-md-6 header__image mt-5">
-						<iframe src="https://embed.lottiefiles.com/animation/91382"></iframe>
+						<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_ctaacxzb.json"
+							background="transparent" speed="1" style="width: ; height: ;" loop autoplay></lottie-player>
 					</div>
 				</div>
 			</div>
@@ -312,7 +311,8 @@
 				<h2 class="small_section_title"> MY SPECIALTY </h2>
 				<h3 class="main_section_header"> MY SKILLS </h3>
 				<p class="main_paragraph mt-5 container">
-					Hi, I'm a Full Stack web developer specializing in developing and building responsive websites and
+					Hi, I'm a Full Stack web developer specializing in developing and building responsive websites
+					and
 					I'm very good at using all the features mentioned below and some more not mentioned
 				</p>
 				<div class="my_special_experiances mt-5">
@@ -433,7 +433,8 @@
 							</h5>
 						</div>
 						<div class="card_drop_down_section">
-							<p>2018-2022 / Studying Law at the Faculty of Law, Aswan University | Good overall rating is
+							<p>2018-2022 / Studying Law at the Faculty of Law, Aswan University | Good overall
+								rating is
 								high
 							</p>
 						</div>
@@ -450,7 +451,8 @@
 							<p>
 								The One Million Arab Coders program is part of the Mohammed bin Rashid Global
 								Initiatives
-								(MBRGI), the charitable foundation dedicated to spreading education and knowledge across
+								(MBRGI), the charitable foundation dedicated to spreading education and knowledge
+								across
 								the Arab world.
 							</p>
 						</div>
@@ -472,8 +474,10 @@
 								<strong>Back End Developer</strong> : 2021-2022
 							</div>
 							<p class="main_paragraph">
-								I spend almost a year freelancing as a back-end developer, working from home, but this
-								time I've advanced my skills by learning the VUE JS front-end framework, to being a full
+								I spend almost a year freelancing as a back-end developer, working from home, but
+								this
+								time I've advanced my skills by learning the VUE JS front-end framework, to being a
+								full
 								stack developer, and building websites from scratch.
 							</p>
 						</div>
@@ -505,7 +509,8 @@
 							</div>
 							<p class="main_paragraph">
 								I have worked in this company for about 5 months, and I have been working on many
-								professional websites, including a multi-merchant online store, an accounting system,
+								professional websites, including a multi-merchant online store, an accounting
+								system,
 								and creating invoices.
 							</p>
 						</div>
@@ -759,32 +764,38 @@
 				</div>
 			</div>
 		</section>
+		<div class="go_up_btn">
+			<button class="btn btn-dark">
+				<i class="fa-solid fa-arrow-up"></i>
+			</button>
+		</div>
 	</div>
 
-	<!-- AOS Script -->
-	<script src="./js/aos.js"></script>
-	<script>
-		AOS.init();
-	</script>
+	<!-- Lottie -->
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 	<!-- Swiper Script -->
 	<script src="./js/swiper-bundle.min.js"></script>
 
-	<!-- fontawesome -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/material-ui/5.0.0-beta.5/index.js"
-		integrity="sha512-uKxirna7d5STmVXEMQYBVRW1nERrqHjwOubv4QcK4oYaaifLiEnN/aLIJxVsyK4R1K+awpNIG73RaQfT1DZ8ew=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-	<!-- <script src="./js/fontawesome.js" crossorigin="anonymous"></script> -->
 	<!-- Bootstrap -->
 	<script src="./js/popper.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
+	
 	<!-- Jquery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+		integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 	<!-- Main Script -->
 	<script src="js/script.js"></script>
 
+	<!-- AOS Animation -->
+	<!-- AOS Script -->
+	<link href="./css/aos.css" rel="stylesheet">
+	<script src="./js/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 </body>
 
 </html>
