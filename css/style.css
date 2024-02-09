@@ -810,3 +810,13 @@ div {
     right: 10px;
     bottom: 0px;
 }
+
+body.default_dark #cv_download {
+    color: #fff;
+}
+
+body.default_dark #cv_download:hover {
+    transition: all 0.5s !important;
+    border: 0.5px #fff !important;
+    outline: auto !important;
+}
