@@ -767,6 +767,7 @@ div {
     font-weight: bold;
     border-radius: 12px;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    left: 0;
 }
 
 .my_work .my__work__ex_section .single__project__info .project_info .my__work_info h6 {
