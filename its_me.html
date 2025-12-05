@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetic Filings Pattern</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Configuration
+        const config = {
+            dashLength: 2.5,
+            dashWidth: 0.8,
+            spacing: 1.5,
+            baseRotation: 0,
+            mouseInfluence: 0.4,
+            smoothness: 0.25,
+            borderRadius: 3,
+            showBorder: false,
+            imageScale: 0.85, // حجم الصورة نسبة للشاشة
+            brightnessThreshold: 0.15, // الحد الأدنى للسطوع لرسم الشرطة (أعلى = تفاصيل أقل)
+            contrastMultiplier: 2.0 // مضاعف التباين (أعلى = تباين أكثر)
+        };
+
+        let mouseX = canvas.width / 2;
+        let mouseY = canvas.height / 2;
+        let imageData = null;
+        let imageWidth = 0;
+        let imageHeight = 0;
+        let imageOffsetX = 0;
+        let imageOffsetY = 0;
+        let originalImageWidth = 0;
+        let originalImageHeight = 0;
+        let animationStarted = false;
+        const dashes = [];
+
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            // Regenerate dashes if image is loaded
+            if (imageData) {
+                dashes.length = 0;
+                generateDashesFromImage();
+            } else {
+                dashes.length = 0;
+                generateDashesDefault();
+            }
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Mouse tracking
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Load image automatically on page load
+        function loadImage() {
+            const img = new Image();
+            img.onload = function () {
+                console.log('Image loaded successfully:', img.width, 'x', img.height);
+                try {
+                    processImage(img);
+                } catch (error) {
+                    console.error('Error processing image:', error);
+                    generateDashesDefault();
+                    if (!animationStarted) {
+                        draw();
+                        animationStarted = true;
+                    }
+                }
+            };
+            img.onerror = function (e) {
+                console.error('Failed to load PNG, trying JPG...');
+                // Try JPG version
+                const img2 = new Image();
+                img2.onload = function () {
+                    console.log('Image loaded from JPG');
+                    try {
+                        processImage(img2);
+                    } catch (error) {
+                        console.error('Error processing image:', error);
+                        generateDashesDefault();
+                        if (!animationStarted) {
+                            draw();
+                            animationStarted = true;
+                        }
+                    }
+                };
+                img2.onerror = function () {
+                    console.error('All image paths failed. Using default pattern');
+                    generateDashesDefault();
+                    if (!animationStarted) {
+                        draw();
+                        animationStarted = true;
+                    }
+                };
+                img2.src = 'images/328846155_507202214881574_3942122195554899770_n.jpg';
+            };
+            // استخدام الصورة من مجلد images - يمكنك تغيير المسار هنا
+            img.src = 'images/328846155_507202214881574_3942122195554899770_n.png';
+        }
+
+        // Load image when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadImage);
+        } else {
+            loadImage();
+        }
+
+        function processImage(img) {
+            // Create temporary canvas for image processing
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+
+            // Calculate dimensions to fit image
+            const maxWidth = canvas.width * config.imageScale;
+            const maxHeight = canvas.height * config.imageScale;
+            const scale = Math.min(maxWidth / img.width, maxHeight / img.height);
+
+            imageWidth = img.width * scale;
+            imageHeight = img.height * scale;
+            imageOffsetX = (canvas.width - imageWidth) / 2;
+            imageOffsetY = (canvas.height - imageHeight) / 2;
+
+            originalImageWidth = img.width;
+            originalImageHeight = img.height;
+
+            tempCanvas.width = img.width;
+            tempCanvas.height = img.height;
+            tempCtx.drawImage(img, 0, 0);
+
+            // Get image data
+            const originalData = tempCtx.getImageData(0, 0, img.width, img.height);
+
+            // Process image: convert to grayscale and calculate gradients
+            imageData = processImageData(originalData, img.width, img.height);
+
+            // Regenerate dashes based on image
+            dashes.length = 0;
+            generateDashesFromImage();
+
+            console.log('Dashes generated:', dashes.length);
+
+            // Start drawing after image is processed
+            if (!animationStarted) {
+                draw();
+                animationStarted = true;
+            }
+        }
+
+        function processImageData(imageData, width, height) {
+            const data = imageData.data;
+            const processed = {
+                brightness: new Float32Array(width * height),
+                gradientX: new Float32Array(width * height),
+                gradientY: new Float32Array(width * height),
+                angle: new Float32Array(width * height),
+                magnitude: new Float32Array(width * height)
+            };
+
+            // Convert to grayscale and calculate brightness
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const idx = (y * width + x) * 4;
+                    const r = data[idx];
+                    const g = data[idx + 1];
+                    const b = data[idx + 2];
+                    const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+                    processed.brightness[y * width + x] = brightness;
+                }
+            }
+
+            // Calculate gradients using Sobel operator
+            const sobelX = [
+                [-1, 0, 1],
+                [-2, 0, 2],
+                [-1, 0, 1]
+            ];
+            const sobelY = [
+                [-1, -2, -1],
+                [0, 0, 0],
+                [1, 2, 1]
+            ];
+
+            for (let y = 1; y < height - 1; y++) {
+                for (let x = 1; x < width - 1; x++) {
+                    let gx = 0, gy = 0;
+
+                    for (let ky = -1; ky <= 1; ky++) {
+                        for (let kx = -1; kx <= 1; kx++) {
+                            const idx = ((y + ky) * width + (x + kx));
+                            const brightness = processed.brightness[idx];
+                            gx += brightness * sobelX[ky + 1][kx + 1];
+                            gy += brightness * sobelY[ky + 1][kx + 1];
+                        }
+                    }
+
+                    const idx = y * width + x;
+                    processed.gradientX[idx] = gx;
+                    processed.gradientY[idx] = gy;
+                    processed.angle[idx] = Math.atan2(gy, gx) + Math.PI / 2; // Perpendicular to gradient
+                    processed.magnitude[idx] = Math.sqrt(gx * gx + gy * gy);
+                }
+            }
+
+            return processed;
+        }
+
+        // Generate dashes from image
+        function generateDashesFromImage() {
+            if (!imageData || !originalImageWidth || !originalImageHeight) {
+                generateDashesDefault();
+                return;
+            }
+
+            const spacing = config.spacing;
+            const scaleX = originalImageWidth / imageWidth;
+            const scaleY = originalImageHeight / imageHeight;
+
+            for (let y = 0; y < imageHeight; y += spacing) {
+                for (let x = 0; x < imageWidth; x += spacing) {
+                    // Map screen coordinates to original image coordinates
+                    const imgX = Math.floor(x * scaleX);
+                    const imgY = Math.floor(y * scaleY);
+
+                    // Ensure we're within bounds
+                    if (imgX >= 0 && imgX < originalImageWidth && imgY >= 0 && imgY < originalImageHeight) {
+                        const idx = imgY * originalImageWidth + imgX;
+
+                        if (idx >= 0 && idx < imageData.brightness.length) {
+                            const brightness = imageData.brightness[idx];
+                            const invertedBrightness = 1 - brightness; // Invert: darker areas = more dashes
+
+                            // Only draw dashes in darker areas (face features)
+                            if (invertedBrightness > config.brightnessThreshold) {
+                                const screenX = imageOffsetX + x;
+                                const screenY = imageOffsetY + y;
+
+                                // Get angle from gradient (perpendicular to edges)
+                                const angle = imageData.angle[idx] || 0;
+                                const magnitude = imageData.magnitude[idx] || 0;
+
+                                // Adjust dash length based on brightness
+                                const dashLength = config.dashLength * (0.5 + invertedBrightness * 0.5);
+
+                                dashes.push({
+                                    x: screenX - canvas.width / 2,
+                                    y: screenY - canvas.height / 2,
+                                    distance: Math.sqrt((screenX - canvas.width / 2) ** 2 + (screenY - canvas.height / 2) ** 2),
+                                    currentAngle: angle,
+                                    baseAngle: angle,
+                                    brightness: invertedBrightness,
+                                    magnitude: magnitude,
+                                    dashLength: dashLength
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        function generateDashesDefault() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            for (let x = -canvas.width / 2; x < canvas.width / 2; x += config.spacing) {
+                for (let y = -canvas.height / 2; y < canvas.height / 2; y += config.spacing) {
+                    const distance = Math.sqrt(x * x + y * y);
+                    if (distance < Math.min(canvas.width, canvas.height) / 2) {
+                        dashes.push({
+                            x,
+                            y,
+                            distance,
+                            currentAngle: Math.atan2(y, x) + Math.PI / 2,
+                            baseAngle: Math.atan2(y, x) + Math.PI / 2,
+                            brightness: 1,
+                            magnitude: 1,
+                            dashLength: config.dashLength
+                        });
+                    }
+                }
+            }
+        }
+
+        // Don't generate default - wait for image to load
+
+        function draw() {
+            // Clear canvas
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = config.dashWidth;
+            ctx.lineCap = 'round';
+
+            dashes.forEach(dash => {
+                const screenX = centerX + dash.x;
+                const screenY = centerY + dash.y;
+
+                // Calculate angle from dash to mouse
+                const dx = mouseX - screenX;
+                const dy = mouseY - screenY;
+                const distanceToMouse = Math.sqrt(dx * dx + dy * dy);
+                const angleToMouse = Math.atan2(dy, dx);
+
+                // Use base angle from image or default pattern
+                const baseAngle = dash.baseAngle || (Math.atan2(dash.y, dash.x) + Math.PI / 2);
+
+                // Check if mouse is inside border - if yes, don't follow mouse
+                let mouseInfluence = 0;
+                if (distanceToMouse > config.borderRadius) {
+                    // Calculate influence based on distance to mouse (closer = stronger influence)
+                    const maxInfluenceDistance = 200;
+                    const influenceRange = maxInfluenceDistance - config.borderRadius;
+                    const normalizedDistance = (distanceToMouse - config.borderRadius) / influenceRange;
+                    mouseInfluence = Math.max(0, 1 - normalizedDistance) * config.mouseInfluence;
+                }
+
+                // Smoothly interpolate between base angle and mouse angle
+                let targetAngle = baseAngle + (angleToMouse - baseAngle) * mouseInfluence;
+
+                // Smooth interpolation for each dash
+                let angleDiff = targetAngle - dash.currentAngle;
+                // Normalize angle difference to [-PI, PI]
+                while (angleDiff > Math.PI) angleDiff -= 2 * Math.PI;
+                while (angleDiff < -Math.PI) angleDiff += 2 * Math.PI;
+
+                dash.currentAngle += angleDiff * config.smoothness;
+
+                // Draw dash with variable length and opacity based on brightness
+                const dashLength = dash.dashLength || config.dashLength;
+                const halfLength = dashLength / 2;
+                const opacity = dash.brightness ? Math.min(1, dash.brightness * config.contrastMultiplier) : 1;
+
+                ctx.globalAlpha = opacity;
+                const startX = screenX - Math.cos(dash.currentAngle) * halfLength;
+                const startY = screenY - Math.sin(dash.currentAngle) * halfLength;
+                const endX = screenX + Math.cos(dash.currentAngle) * halfLength;
+                const endY = screenY + Math.sin(dash.currentAngle) * halfLength;
+
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(endX, endY);
+                ctx.stroke();
+                ctx.globalAlpha = 1;
+
+                // Draw border circle if enabled
+                if (config.showBorder) {
+                    ctx.strokeStyle = '#ccc';
+                    ctx.lineWidth = 1;
+                    ctx.setLineDash([5, 5]);
+                    ctx.beginPath();
+                    ctx.arc(screenX, screenY, config.borderRadius, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = config.dashWidth;
+                }
+            });
+
+            requestAnimationFrame(draw);
+        }
+
+        // Don't start animation here - wait for image to load
+        // draw() will be called after image is processed
+    </script>
+</body>
+
+</html>

@@ -101,9 +101,9 @@ body.theme .btn:hover {
 }
 
 body.theme #cv_download {
-    color: var(--button-text);
-    background-color: var(--button-bg);
-    border: 2px solid var(--button-bg);
+    color: var(--button-text) !important;
+    background-color: var(--button-bg) !important;
+    border: 2px solid var(--button-bg) !important;
 }
 
 body.theme #cv_download:hover {
@@ -111,10 +111,10 @@ body.theme #cv_download:hover {
     border-color: var(--button-hover);
 }
 
-body.theme #cv_download {
+/* body.theme #cv_download {
     color: var(--button-text) !important;
     border: 2px solid var(--button-bg) !important;
-}
+} */
 
 
 body.theme .lef-navbar {
@@ -209,6 +209,46 @@ body.default_dark {
     background-color: #0b0c13 !important;
     color: #fff !important;
     transition: color 0, background-color 0.5s;
+}
+
+/* Typing Animation Styles */
+.typing-text {
+    display: inline-block;
+    min-height: 1.2em;
+}
+
+.typing-cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+    color: var(--primary-color);
+    font-weight: 100;
+    margin-left: 2px;
+}
+
+.typing-sentences {
+    display: inline-block;
+    min-height: 1.2em;
+}
+
+.typing-sentences-cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+    color: var(--primary-color);
+    font-weight: 100;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 .arvo_font_family {
@@ -832,15 +872,20 @@ div {
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.theme .auther_info_s h4 {
+    color: #fff !important;
+}
+
+.lef-navbar.theme {
+    background: #0b0c13 !important;
+    transition: all 0.5s;
+}
+
 @media (max-width: 900px) {
     .lef-navbar {
         background: #fff;
     }
 
-    .lef-navbar.theme {
-        background: #0b0c13 !important;
-        transition: all 0.5s;
-    }
 
     .lef-navbar.default_dark {
         background: #0b0c13 !important;

@@ -135,18 +135,40 @@ $(document).ready(function () {
     $(".toggle_light").toggleClass("text-light");
     $(".change__mode_container i").delay(300).toggleClass("fa-sun fa-moon");
     $(".change__mode_container i").toggleClass(class_value);
+
+    // Apply data-theme attribute for CSS variables
+    if (class_value === "theme" || class_value === "default_dark") {
+      $("body").attr("data-theme", "dark");
+    } else {
+      $("body").attr("data-theme", "light");
+    }
   };
 
   // Change Theme Mode
   $(".change__mode_container").on("click", function () {
-    $("body").hasClass("theme") || $("body").hasClass("default_dark")
-      ? localStorage.setItem("theme", "light")
-      : localStorage.setItem("theme", "dark");
-    if ($("body").hasClass("default_dark")) {
-      $(".default_dark").toggleClass("default_dark");
-      $(".toggle_light").toggleClass("text-light");
-      $(".change__mode_container i").delay(300).toggleClass("fa-sun fa-moon");
+    const isDark =
+      $("body").hasClass("theme") || $("body").hasClass("default_dark");
+
+    if (isDark) {
+      // Switch to light mode
+      localStorage.setItem("theme", "light");
+
+      // Remove dark classes from all elements
+      $("body").removeClass("theme default_dark");
+      $(".main_paragraph").removeClass("theme default_dark");
+      $(".lef-navbar").removeClass("theme default_dark");
+      $(".theme_scale_container").removeClass("theme default_dark");
+      $(".change__mode_container i").removeClass("theme default_dark");
+
+      // Set data-theme attribute
+      $("body").attr("data-theme", "light");
+
+      // Update icon and text
+      $(".toggle_light").removeClass("text-light");
+      $(".change__mode_container i").removeClass("fa-moon").addClass("fa-sun");
     } else {
+      // Switch to dark mode
+      localStorage.setItem("theme", "dark");
       ChangePortfolioTheme("theme");
     }
   });
@@ -155,10 +177,14 @@ $(document).ready(function () {
   const CheckIfThemeIsSavedInLocalStorage = function () {
     if (localStorage.getItem("theme")) {
       if (localStorage.getItem("theme") === "dark") {
-        ChangePortfolioTheme("default_dark");
+        ChangePortfolioTheme("theme");
+        $("body").attr("data-theme", "dark");
+      } else {
+        $("body").attr("data-theme", "light");
       }
     } else {
       localStorage.setItem("theme", "light");
+      $("body").attr("data-theme", "light");
     }
   };
   CheckIfThemeIsSavedInLocalStorage();
@@ -205,4 +231,93 @@ $(document).ready(function () {
       $("body").css("overflow", "auto");
     }
   });
+
+  // Typing Animation for Name
+  const typingText = "Abdallah Shokrey";
+  const typingElement = $(".typing-content");
+  let typingIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 100; // milliseconds per character
+
+  function typeText() {
+    const currentText = typingElement.text();
+
+    if (!isDeleting && typingIndex < typingText.length) {
+      // Typing forward
+      typingElement.text(typingText.substring(0, typingIndex + 1));
+      typingIndex++;
+      typingSpeed = 100; // Normal typing speed
+    } else if (isDeleting && typingIndex > 0) {
+      // Deleting backward
+      typingElement.text(typingText.substring(0, typingIndex - 1));
+      typingIndex--;
+      typingSpeed = 50; // Faster deletion speed
+    } else if (!isDeleting && typingIndex === typingText.length) {
+      // Finished typing, wait then start deleting
+      typingSpeed = 2000; // Wait 2 seconds before deleting
+      isDeleting = true;
+    } else if (isDeleting && typingIndex === 0) {
+      // Finished deleting, wait then start typing again
+      typingSpeed = 500; // Wait 0.5 seconds before typing again
+      isDeleting = false;
+    }
+
+    setTimeout(typeText, typingSpeed);
+  }
+
+  // Start typing animation
+  typeText();
+
+  // Typing Animation for Multiple Sentences
+  const sentences = [
+    "100% SELF EDUCATED PROGRAMMER WITH FOUR YEARS OF EXPERIENCE.",
+    "PASSIONATE ABOUT CREATING INNOVATIVE WEB SOLUTIONS.",
+    "SPECIALIZED IN MODERN FRONTEND AND BACKEND TECHNOLOGIES.",
+    "DEDICATED TO WRITING CLEAN AND EFFICIENT CODE.",
+    "ALWAYS LEARNING AND IMPROVING MY SKILLS.",
+  ];
+
+  const typingSentencesElement = $(".typing-sentences-content");
+  let currentSentenceIndex = 0;
+  let sentenceTypingIndex = 0;
+  let isDeletingSentence = false;
+  let sentenceTypingSpeed = 50;
+
+  function typeSentence() {
+    const currentSentence = sentences[currentSentenceIndex];
+    const currentText = typingSentencesElement.text();
+
+    if (!isDeletingSentence && sentenceTypingIndex < currentSentence.length) {
+      // Typing forward
+      typingSentencesElement.text(
+        currentSentence.substring(0, sentenceTypingIndex + 1)
+      );
+      sentenceTypingIndex++;
+      sentenceTypingSpeed = 50; // Normal typing speed
+    } else if (isDeletingSentence && sentenceTypingIndex > 0) {
+      // Deleting backward
+      typingSentencesElement.text(
+        currentSentence.substring(0, sentenceTypingIndex - 1)
+      );
+      sentenceTypingIndex--;
+      sentenceTypingSpeed = 30; // Faster deletion speed
+    } else if (
+      !isDeletingSentence &&
+      sentenceTypingIndex === currentSentence.length
+    ) {
+      // Finished typing, wait then start deleting
+      sentenceTypingSpeed = 3000; // Wait 3 seconds before deleting
+      isDeletingSentence = true;
+    } else if (isDeletingSentence && sentenceTypingIndex === 0) {
+      // Finished deleting, move to next sentence
+      currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
+      sentenceTypingSpeed = 500; // Wait 0.5 seconds before typing next sentence
+      isDeletingSentence = false;
+    }
+
+    setTimeout(typeSentence, sentenceTypingSpeed);
+  }
+
+  // Start sentences typing animation
+  typeSentence();
 });
