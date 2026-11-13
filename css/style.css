@@ -1895,3 +1895,63 @@ body.theme .project_link:focus-visible {
         padding: 16px 16px 18px;
     }
 }
+
+
+/* ============ Tech Stack (Skills) ============ */
+.tech_stack {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.tech_stack__group {
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tech_stack__title {
+    margin: 0 0 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.tech_stack__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech_chip {
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-color);
+    background: rgba(79, 70, 229, 0.08);
+}
+
+body.theme .tech_stack__group {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme .tech_stack__title {
+    color: #a5b4fc;
+}
+
+body.theme .tech_chip {
+    color: #e2e8f0;
+    background: rgba(129, 140, 248, 0.18);
+}
+
+@media (max-width: 768px) {
+    .tech_stack {
+        grid-template-columns: 1fr;
+    }
+}

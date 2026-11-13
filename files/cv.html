@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Abdallah Shokrey - Backend Software Engineer</title>
+	<meta name="author" content="Abdallah Shokrey">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		/* Source of files/Abdallah Shokrey.pdf — open in Chrome and print to PDF (A4, no margins, background graphics on). */
+		@page {
+			size: A4;
+			margin: 9mm 0;
+		}
+
+		@page :first {
+			margin-top: 0;
+		}
+
+		:root {
+			--ink: #0f172a;
+			--text: #334155;
+			--muted: #64748b;
+			--line: #e2e8f0;
+			--accent: #4338ca;
+			--accent-soft: #eef2ff;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+
+		body {
+			font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+			font-size: 9.2pt;
+			line-height: 1.5;
+			color: var(--text);
+			background: #e5e7eb;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.page {
+			width: 210mm;
+			margin: 0 auto;
+			background: #fff;
+		}
+
+		/* Header */
+		.header {
+			background: var(--ink);
+			color: #fff;
+			padding: 11mm 15mm 9mm;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			gap: 10mm;
+			border-bottom: 1.2mm solid var(--accent);
+		}
+
+		.header h1 {
+			font-size: 25pt;
+			font-weight: 800;
+			letter-spacing: -0.02em;
+			line-height: 1.1;
+		}
+
+		.header .role {
+			margin-top: 2mm;
+			font-size: 11pt;
+			font-weight: 600;
+			color: #c7d2fe;
+		}
+
+		.header .stack {
+			margin-top: 0.8mm;
+			font-size: 9pt;
+			color: #cbd5e1;
+		}
+
+		.contact {
+			text-align: right;
+			font-size: 8.6pt;
+			line-height: 1.75;
+			color: #e2e8f0;
+			white-space: nowrap;
+		}
+
+		.contact b {
+			color: #a5b4fc;
+			font-weight: 600;
+			margin-right: 1.5mm;
+		}
+
+		.body {
+			padding: 0 15mm;
+		}
+
+		/* Sections */
+		section {
+			margin-top: 4.6mm;
+		}
+
+		h2 {
+			display: flex;
+			align-items: center;
+			gap: 3mm;
+			font-size: 9.2pt;
+			font-weight: 700;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+			color: var(--accent);
+			margin-bottom: 2.6mm;
+			break-after: avoid;
+		}
+
+		h2::after {
+			content: '';
+			flex: 1;
+			height: 0.3mm;
+			background: var(--line);
+		}
+
+		.summary {
+			font-size: 9.6pt;
+			color: var(--text);
+		}
+
+		/* Highlights */
+		.stats {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 3mm;
+			margin-top: 5mm;
+		}
+
+		.stat {
+			background: var(--accent-soft);
+			border-radius: 2mm;
+			padding: 2.6mm 3.2mm;
+		}
+
+		.stat strong {
+			display: block;
+			font-size: 14pt;
+			font-weight: 800;
+			line-height: 1.2;
+			color: var(--accent);
+		}
+
+		.stat span {
+			font-size: 7.9pt;
+			line-height: 1.35;
+			display: block;
+			color: var(--text);
+		}
+
+		/* Skills */
+		.skills {
+			display: grid;
+			grid-template-columns: 38mm 1fr;
+			row-gap: 1.3mm;
+		}
+
+		.skills dt {
+			font-weight: 600;
+			color: var(--ink);
+		}
+
+		.skills dd {
+			color: var(--text);
+		}
+
+		/* Experience */
+		.job {
+			break-inside: avoid;
+		}
+
+		.job+.job {
+			margin-top: 4.2mm;
+		}
+
+		.job__head {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			gap: 4mm;
+		}
+
+		.job__title {
+			font-size: 10.4pt;
+			font-weight: 700;
+			color: var(--ink);
+		}
+
+		.job__title span {
+			color: var(--accent);
+			font-weight: 600;
+		}
+
+		.job__date {
+			font-size: 8.6pt;
+			font-weight: 600;
+			color: var(--muted);
+			white-space: nowrap;
+		}
+
+		.job__about {
+			font-size: 8.7pt;
+			font-style: italic;
+			color: var(--muted);
+			margin-bottom: 1mm;
+		}
+
+		ul {
+			list-style: disc;
+			padding-left: 4.4mm;
+		}
+
+		li {
+			margin-top: 0.7mm;
+		}
+
+		li::marker {
+			color: var(--accent);
+		}
+
+		/* Projects */
+		.projects {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 3mm;
+		}
+
+		.project {
+			border: 0.3mm solid var(--line);
+			border-left: 0.9mm solid var(--accent);
+			border-radius: 1.6mm;
+			padding: 2mm 3mm 2.2mm;
+			break-inside: avoid;
+		}
+
+		.project h3 {
+			font-size: 9.8pt;
+			font-weight: 700;
+			color: var(--ink);
+		}
+
+		.project h3 small {
+			font-size: 8.2pt;
+			font-weight: 500;
+			color: var(--muted);
+		}
+
+		.project p {
+			font-size: 8.7pt;
+			line-height: 1.45;
+			margin-top: 0.6mm;
+		}
+
+		.project .links {
+			margin-top: 1.2mm;
+			font-size: 8pt;
+			font-weight: 600;
+			color: var(--accent);
+		}
+
+		.project .links a+a::before {
+			content: '·';
+			margin: 0 1.6mm;
+			color: var(--muted);
+		}
+
+		/* Education */
+		.edu {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			gap: 4mm;
+		}
+
+		.edu+.edu {
+			margin-top: 1.6mm;
+		}
+
+		.edu strong {
+			color: var(--ink);
+			font-weight: 600;
+		}
+
+		.edu small {
+			display: block;
+			font-size: 8.7pt;
+			color: var(--muted);
+		}
+
+		@media print {
+			body {
+				background: #fff;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page">
+		<header class="header">
+			<div>
+				<h1>Abdallah Shokrey</h1>
+				<p class="role">Backend Software Engineer</p>
+				<p class="stack">PHP · Laravel · Symfony · RabbitMQ · Redis · MySQL · Docker</p>
+			</div>
+			<div class="contact">
+				<div><b>Phone</b>+20 112 989 9520</div>
+				<div><b>Email</b><a href="mailto:abdoshokrey68@gmail.com">abdoshokrey68@gmail.com</a></div>
+				<div><b>LinkedIn</b><a href="https://www.linkedin.com/in/abdallah-shokrey/">linkedin.com/in/abdallah-shokrey</a></div>
+				<div><b>GitHub</b><a href="https://github.com/abdoshokrey68">github.com/abdoshokrey68</a></div>
+				<div><b>Portfolio</b><a href="https://abdoshokrey68.github.io/portfolio.github.io">abdoshokrey68.github.io/portfolio.github.io</a></div>
+				<div><b>Location</b>Egypt</div>
+			</div>
+		</header>
+
+		<div class="body">
+			<section>
+				<h2>Profile</h2>
+				<p class="summary">
+					Backend-focused PHP engineer with 4+ years building and scaling web platforms with Laravel and
+					Symfony. Experienced in event-driven systems with RabbitMQ and Redis, RESTful API design,
+					MySQL/PostgreSQL query optimization and Docker-based delivery. Shipped products in sports, real
+					estate, e-commerce, solar energy, gold trading and CRM domains, and can work across the stack with
+					React or Vue when needed.
+				</p>
+				<div class="stats">
+					<div class="stat"><strong>4+ years</strong><span>building and scaling web platforms</span></div>
+					<div class="stat"><strong>~12 systems</strong><span>built and maintained in production</span></div>
+					<div class="stat"><strong>~15,000 users</strong><span>served by the Sportyano backend</span></div>
+					<div class="stat"><strong>60% faster</strong><span>app development with the OnRow low-code platform</span></div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Technical Skills</h2>
+				<dl class="skills">
+					<dt>Backend</dt>
+					<dd>PHP 8, Laravel, Symfony, Node.js, Eloquent, Doctrine, Laravel Queues</dd>
+					<dt>Architecture</dt>
+					<dd>Microservices, Event-Driven Architecture, Distributed Systems, OOP, SOLID, Design Patterns</dd>
+					<dt>Messaging &amp; Caching</dt>
+					<dd>RabbitMQ, Redis (caching strategies, in-memory data structures)</dd>
+					<dt>APIs</dt>
+					<dd>RESTful API design, GraphQL, WebSockets</dd>
+					<dt>Databases</dt>
+					<dd>MySQL, PostgreSQL (query optimization, indexing, normalization)</dd>
+					<dt>Testing</dt>
+					<dd>PHPUnit, Pest</dd>
+					<dt>DevOps &amp; Cloud</dt>
+					<dd>Docker &amp; Docker Compose, CI/CD pipelines, NGINX, Linux, AWS (EC2, S3, RDS), Git</dd>
+					<dt>Frontend</dt>
+					<dd>React.js, Vue.js, JavaScript (ES6+), TypeScript</dd>
+				</dl>
+			</section>
+
+			<section>
+				<h2>Professional Experience</h2>
+
+				<div class="job">
+					<div class="job__head">
+						<p class="job__title">Full Stack Developer <span>· The First Agency</span></p>
+						<p class="job__date">07/2025 – Present</p>
+					</div>
+					<p class="job__about">Software house delivering scalable digital solutions across multiple industries.</p>
+					<ul>
+						<li>Built and maintained ~12 production systems for clients using Laravel and MySQL, including
+							gold-trading platforms (Hi-Gold), CRM systems and a product-rental platform.</li>
+						<li>Rescued slow pages that were hitting request timeouts, bringing them under 3 seconds through
+							query tuning, indexing and API restructuring.</li>
+						<li>Raised code quality across full-stack projects by applying clean-code standards, SOLID
+							principles and structured refactoring.</li>
+						<li>Improved internal development workflows to reduce delivery time and operational mistakes.</li>
+					</ul>
+				</div>
+
+				<div class="job">
+					<div class="job__head">
+						<p class="job__title">Back-End Developer <span>· Sportyano</span></p>
+						<p class="job__date">10/2024 – 07/2025</p>
+					</div>
+					<p class="job__about">Sports-tech platform connecting athletes, clubs and fans.</p>
+					<ul>
+						<li>Built and optimized the backend of a sports platform with ~15,000 users, covering bookings,
+							events and athlete engagement.</li>
+						<li>Delivered performance-driven features and improved application performance ahead of the
+							production launch — recognized with a Certificate of Appreciation.</li>
+					</ul>
+				</div>
+
+				<div class="job">
+					<div class="job__head">
+						<p class="job__title">Full Stack Developer <span>· On Call</span></p>
+						<p class="job__date">05/2024 – 10/2024</p>
+					</div>
+					<p class="job__about">Web applications for internal process automation and client platforms.</p>
+					<ul>
+						<li>Built and maintained web applications, including gym-management systems and a multi-vendor
+							POS platform, using Laravel and MySQL.</li>
+						<li>Streamlined internal processes, increasing team efficiency and productivity.</li>
+					</ul>
+				</div>
+
+				<div class="job">
+					<div class="job__head">
+						<p class="job__title">Full Stack Developer <span>· Elevate</span></p>
+						<p class="job__date">07/2022 – 04/2024</p>
+					</div>
+					<p class="job__about">Solar panel maintenance, installation and financing provider.</p>
+					<ul>
+						<li>Designed and developed scalable web applications supporting Elevate’s solar maintenance,
+							installation and financing services, including Boxbyld, a solar panel installation platform.</li>
+						<li>Improved user engagement on the company’s customer-facing platforms.</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<h2>Selected Projects</h2>
+				<div class="projects">
+					<div class="project">
+						<h3>Sportyano <small>— Sports digital platform</small></h3>
+						<p>Booking of courts, activities and academies with a catalog of talents, academies and
+							playgrounds. Stack: Laravel, MySQL.</p>
+						<p class="links"><a href="https://sportyano.com/">sportyano.com</a><a
+								href="https://play.google.com/store/apps/details?id=com.sportyano.app">Google Play</a></p>
+					</div>
+					<div class="project">
+						<h3>Hi-Gold <small>— Gold trading marketplace</small></h3>
+						<p>Multi-vendor e-commerce platform for buying and selling gold, built at The First Agency.
+							Stack: Laravel, MySQL.</p>
+					</div>
+					<div class="project">
+						<h3>Hanqoul <small>— Multi-store delivery · Backend</small></h3>
+						<p>Backend and APIs for a delivery platform made of three apps: customers, stores and delivery
+							partners.</p>
+						<p class="links"><a
+								href="https://play.google.com/store/apps/details?id=com.thefirst.hanquol_customer">Google Play</a><a
+								href="https://apps.apple.com/us/app/id6471830715">App Store</a></p>
+					</div>
+					<div class="project">
+						<h3>To-Let <small>— Product-rental platform · Backend</small></h3>
+						<p>Backend and APIs for a rental app that lets users find and rent what they need in a few taps.</p>
+						<p class="links"><a
+								href="https://play.google.com/store/apps/details?id=com.thefirst.tolet">Google Play</a><a
+								href="https://apps.apple.com/us/app/id6758267446">App Store</a></p>
+					</div>
+					<div class="project">
+						<h3>Damany <small>— Invoices &amp; warranties · Backend</small></h3>
+						<p>Backend and APIs for an app that organizes invoices and warranties and manages business teams.</p>
+						<p class="links"><a
+								href="https://play.google.com/store/apps/details?id=com.thefirst.dmany">Google Play</a><a
+								href="https://apps.apple.com/us/app/id6790133172">App Store</a></p>
+					</div>
+					<div class="project">
+						<h3>Bishyaka <small>— Fashion e-commerce · Full Stack</small></h3>
+						<p>Full-stack work on the online store, CRM and operations portal, plus the backend of the customer
+							app.</p>
+						<p class="links"><a href="https://bishyaka.com/">bishyaka.com</a><a
+								href="https://play.google.com/store/apps/details?id=com.bishyaka.consumer.work">Google Play</a></p>
+					</div>
+					<div class="project">
+						<h3>OnRow <small>— Low-code app builder</small></h3>
+						<p>Low-code platform that cut app development time by 60%. Stack: Laravel, MySQL.</p>
+					</div>
+					<div class="project">
+						<h3>IWAN <small>— AI-powered real estate</small></h3>
+						<p>Matched users with properties and automated broker–client interactions. Stack: Laravel,
+							MySQL.</p>
+					</div>
+					<div class="project">
+						<h3>Cairo POS <small>— POS &amp; e-commerce · Full Stack (Freelance)</small></h3>
+						<p>Cashier and barcode sales system with shipping API integration for real-time quotes and
+							tracking. Stack: Laravel, MySQL.</p>
+						<p class="links"><a href="https://www.cairopos.com/">cairopos.com</a></p>
+					</div>
+					<div class="project">
+						<h3>Dokans <small>— Multi-vendor e-commerce (Freelance)</small></h3>
+						<p>Backend integrations that streamlined operations and data flow across the vendor ecosystem.
+							Stack: Laravel, MySQL.</p>
+						<p class="links"><a href="https://drr.ae/">drr.ae</a></p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Education &amp; Certifications</h2>
+				<div class="edu">
+					<p><strong>Software Engineering Diploma (Back-End Development)</strong>
+						<small>Information Technology Institute (ITI)</small></p>
+					<p class="job__date">08/2021 – 04/2022</p>
+				</div>
+				<div class="edu">
+					<p><strong>Bachelor of Laws (LLB)</strong>
+						<small>Aswan University</small></p>
+					<p class="job__date">09/2017 – 06/2021</p>
+				</div>
+				<div class="edu">
+					<p><strong>Certificate of Appreciation</strong>
+						<small>Sportyano — for performance improvements and the production launch</small></p>
+				</div>
+			</section>
+
+			<section>
+				<h2>Languages</h2>
+				<p><strong style="color:var(--ink);font-weight:600">Arabic</strong> — Native &nbsp;·&nbsp; <strong style="color:var(--ink);font-weight:600">English</strong> — Intermediate</p>
+			</section>
+		</div>
+	</div>
+</body>
+
+</html>
